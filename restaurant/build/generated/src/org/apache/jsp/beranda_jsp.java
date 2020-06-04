@@ -3,6 +3,25 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import control.koneksi;
+import java.sql.ResultSet;
+import control.koneksi;
+import java.sql.*;
+import control.koneksi;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import control.koneksi;
+import java.sql.ResultSet;
+import control.koneksi;
+import java.sql.*;
+import control.koneksi;
+import java.sql.ResultSet;
+import control.koneksi;
+import java.sql.*;
+import control.koneksi;
+import java.sql.ResultSet;
+import control.koneksi;
+import java.sql.*;
 
 public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -11,10 +30,39 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List<String> _jspx_dependants;
 
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(9);
+    _jspx_dependants.add("/home.jsp");
+    _jspx_dependants.add("/bahan.jsp");
+    _jspx_dependants.add("/editbahan.jsp");
+    _jspx_dependants.add("/menu.jsp");
+    _jspx_dependants.add("/editmenu.jsp");
+    _jspx_dependants.add("/supplier.jsp");
+    _jspx_dependants.add("/editsupplier.jsp");
+    _jspx_dependants.add("/user.jsp");
+    _jspx_dependants.add("/edituser.jsp");
+  }
+
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_choose;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_otherwise;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_when_test;
+
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
     return _jspx_dependants;
+  }
+
+  public void _jspInit() {
+    _jspx_tagPool_c_choose = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_otherwise = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_when_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+  }
+
+  public void _jspDestroy() {
+    _jspx_tagPool_c_choose.release();
+    _jspx_tagPool_c_otherwise.release();
+    _jspx_tagPool_c_when_test.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -44,712 +92,1329 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
+      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"style/style.css\" />\n");
+      out.write("\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Ard Shop - Shoping Your Choice</title>\n");
-      out.write("    <meta charset=\"utf-8\">\n");
-      out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n");
-      out.write("    \n");
-      out.write("    <link href=\"https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap\" rel=\"stylesheet\">\n");
-      out.write("    <link href=\"https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap\" rel=\"stylesheet\">\n");
-      out.write("    <link href=\"https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap\" rel=\"stylesheet\">\n");
-      out.write("\n");
-      out.write("    <link rel=\"stylesheet\" href=\"css/open-iconic-bootstrap.min.css\">\n");
-      out.write("    <link rel=\"stylesheet\" href=\"css/animate.css\">\n");
-      out.write("    \n");
-      out.write("    <link rel=\"stylesheet\" href=\"css/owl.carousel.min.css\">\n");
-      out.write("    <link rel=\"stylesheet\" href=\"css/owl.theme.default.min.css\">\n");
-      out.write("    <link rel=\"stylesheet\" href=\"css/magnific-popup.css\">\n");
-      out.write("\n");
-      out.write("    <link rel=\"stylesheet\" href=\"css/aos.css\">\n");
-      out.write("\n");
-      out.write("    <link rel=\"stylesheet\" href=\"css/ionicons.min.css\">\n");
-      out.write("\n");
-      out.write("    <link rel=\"stylesheet\" href=\"css/bootstrap-datepicker.css\">\n");
-      out.write("    <link rel=\"stylesheet\" href=\"css/jquery.timepicker.css\">\n");
-      out.write("\n");
-      out.write("    \n");
-      out.write("    <link rel=\"stylesheet\" href=\"css/flaticon.css\">\n");
-      out.write("    <link rel=\"stylesheet\" href=\"css/icomoon.css\">\n");
-      out.write("    <link rel=\"stylesheet\" href=\"css/style.css\">\n");
+      out.write("        <title>Restauran Mamma Masak</title>\n");
       out.write("    </head>\n");
-      out.write("    <body class=\"goto-here\">\n");
-      out.write("\t\t<div class=\"py-1 bg-primary\">\n");
-      out.write("    \t<div class=\"container\">\n");
-      out.write("    \t\t<div class=\"row no-gutters d-flex align-items-start align-items-center px-md-0\">\n");
-      out.write("\t    \t\t<div class=\"col-lg-12 d-block\">\n");
-      out.write("\t\t    \t\t<div class=\"row d-flex\">\n");
-      out.write("\t\t    \t\t\t<div class=\"col-md pr-4 d-flex topper align-items-center\">\n");
-      out.write("\t\t\t\t\t    \t<div class=\"icon mr-2 d-flex justify-content-center align-items-center\"><span class=\"icon-phone2\"></span></div>\n");
-      out.write("\t\t\t\t\t\t    <span class=\"text\">+ 1235 2355 98</span>\n");
-      out.write("\t\t\t\t\t    </div>\n");
-      out.write("\t\t\t\t\t    <div class=\"col-md pr-4 d-flex topper align-items-center\">\n");
-      out.write("\t\t\t\t\t    \t<div class=\"icon mr-2 d-flex justify-content-center align-items-center\"><span class=\"icon-paper-plane\"></span></div>\n");
-      out.write("\t\t\t\t\t\t    <span class=\"text\">anggiriantikadew12@gmail.com</span>\n");
-      out.write("\t\t\t\t\t    </div>\n");
-      out.write("\t\t\t\t\t    <div class=\"col-md-5 pr-4 d-flex topper align-items-center text-lg-right\">\n");
-      out.write("\t\t\t\t\t\t    <span class=\"text\">3-5 Business days delivery &amp; Free Returns</span>\n");
-      out.write("\t\t\t\t\t    </div>\n");
-      out.write("\t\t\t\t    </div>\n");
-      out.write("\t\t\t    </div>\n");
-      out.write("\t\t    </div>\n");
-      out.write("\t\t  </div>\n");
+      out.write("    <body>\n");
+      out.write("  <div id=\"main\">\n");
+      out.write("    <div id=\"header\">\n");
+      out.write("      <div id=\"logo\">\n");
+      out.write("        <div id=\"logo_text\">\n");
+      out.write("          <!-- class=\"logo_colour\", allows you to change the colour of the text -->\n");
+      out.write("          <h1><a href=\"beranda.jsp\">Restauran<span class=\"logo_colour\">Mamma Masak</span></a></h1>\n");
+      out.write("          <h2>Food. Drinks. Snack.</h2>\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("      <div id=\"menubar\">\n");
+      out.write("        <ul id=\"menu\">\n");
+      out.write("          <!-- put class=\"selected\" in the li tag for the selected page - to highlight which page you're on -->\n");
+      out.write("          <li><a href=\"beranda.jsp\">Home</a></li>\n");
+      out.write("          <li><a href=\"beranda.jsp?halaman=menu\">Menu</a></li>\n");
+      out.write("          <li><a href=\"beranda.jsp?halaman=bahan\">Bahan</a></li>\n");
+      out.write("          <li><a href=\"beranda.jsp?halaman=supplier\">Supplier</a></li>\n");
+      out.write("          <li><a href=\"beranda.jsp?halaman=user\">User</a></li>\n");
+      out.write("          <li><a href=\"contact.html\">Contact Us</a></li>\n");
+      out.write("        </ul>\n");
+      out.write("      </div>\n");
       out.write("    </div>\n");
-      out.write("    <nav class=\"navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light\" id=\"ftco-navbar\">\n");
-      out.write("\t    <div class=\"container\">\n");
-      out.write("\t      <a class=\"navbar-brand\" href=\"index.html\">Vegefoods</a>\n");
-      out.write("\t      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#ftco-nav\" aria-controls=\"ftco-nav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n");
-      out.write("\t        <span class=\"oi oi-menu\"></span> Menu\n");
-      out.write("\t      </button>\n");
-      out.write("\n");
-      out.write("\t      <div class=\"collapse navbar-collapse\" id=\"ftco-nav\">\n");
-      out.write("\t        <ul class=\"navbar-nav ml-auto\">\n");
-      out.write("\t          <li class=\"nav-item active\"><a href=\"index.html\" class=\"nav-link\">Home</a></li>\n");
-      out.write("\t          <li class=\"nav-item dropdown\">\n");
-      out.write("              <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"dropdown04\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Shop</a>\n");
-      out.write("              <div class=\"dropdown-menu\" aria-labelledby=\"dropdown04\">\n");
-      out.write("              \t<a class=\"dropdown-item\" href=\"shop.html\">Shop</a>\n");
-      out.write("              \t<a class=\"dropdown-item\" href=\"wishlist.html\">Wishlist</a>\n");
-      out.write("                <a class=\"dropdown-item\" href=\"product-single.html\">Single Product</a>\n");
-      out.write("                <a class=\"dropdown-item\" href=\"cart.html\">Cart</a>\n");
-      out.write("                <a class=\"dropdown-item\" href=\"checkout.html\">Checkout</a>\n");
-      out.write("              </div>\n");
-      out.write("            </li>\n");
-      out.write("\t          <li class=\"nav-item\"><a href=\"about.html\" class=\"nav-link\">About</a></li>\n");
-      out.write("\t          <li class=\"nav-item\"><a href=\"blog.html\" class=\"nav-link\">Blog</a></li>\n");
-      out.write("\t          <li class=\"nav-item\"><a href=\"contact.html\" class=\"nav-link\">Contact</a></li>\n");
-      out.write("\t          <li class=\"nav-item cta cta-colored\"><a href=\"cart.html\" class=\"nav-link\"><span class=\"icon-shopping_cart\"></span>[0]</a></li>\n");
-      out.write("\n");
-      out.write("\t        </ul>\n");
-      out.write("\t      </div>\n");
-      out.write("\t    </div>\n");
-      out.write("\t  </nav>\n");
-      out.write("    <!-- END nav -->\n");
-      out.write("\n");
-      out.write("    <section id=\"home-section\" class=\"hero\">\n");
-      out.write("\t\t  <div class=\"home-slider owl-carousel\">\n");
-      out.write("\t      <div class=\"slider-item\" style=\"background-image: url(images/bg_1.jpg);\">\n");
-      out.write("\t      \t<div class=\"overlay\"></div>\n");
-      out.write("\t        <div class=\"container\">\n");
-      out.write("\t          <div class=\"row slider-text justify-content-center align-items-center\" data-scrollax-parent=\"true\">\n");
-      out.write("\n");
-      out.write("\t            <div class=\"col-md-12 ftco-animate text-center\">\n");
-      out.write("\t              <h1 class=\"mb-2\">We serve Fresh Vegestables &amp; Fruits</h1>\n");
-      out.write("\t              <h2 class=\"subheading mb-4\">We deliver organic vegetables &amp; fruits</h2>\n");
-      out.write("\t              <p><a href=\"#\" class=\"btn btn-primary\">View Details</a></p>\n");
-      out.write("\t            </div>\n");
-      out.write("\n");
-      out.write("\t          </div>\n");
-      out.write("\t        </div>\n");
-      out.write("\t      </div>\n");
-      out.write("\n");
-      out.write("\t      <div class=\"slider-item\" style=\"background-image: url(images/bg_2.jpg);\">\n");
-      out.write("\t      \t<div class=\"overlay\"></div>\n");
-      out.write("\t        <div class=\"container\">\n");
-      out.write("\t          <div class=\"row slider-text justify-content-center align-items-center\" data-scrollax-parent=\"true\">\n");
-      out.write("\n");
-      out.write("\t            <div class=\"col-sm-12 ftco-animate text-center\">\n");
-      out.write("\t              <h1 class=\"mb-2\">100% Fresh &amp; Organic Foods</h1>\n");
-      out.write("\t              <h2 class=\"subheading mb-4\">We deliver organic vegetables &amp; fruits</h2>\n");
-      out.write("\t              <p><a href=\"#\" class=\"btn btn-primary\">View Details</a></p>\n");
-      out.write("\t            </div>\n");
-      out.write("\n");
-      out.write("\t          </div>\n");
-      out.write("\t        </div>\n");
-      out.write("\t      </div>\n");
-      out.write("\t    </div>\n");
-      out.write("    </section>\n");
-      out.write("\n");
-      out.write("    <section class=\"ftco-section\">\n");
-      out.write("\t\t\t<div class=\"container\">\n");
-      out.write("\t\t\t\t<div class=\"row no-gutters ftco-services\">\n");
-      out.write("          <div class=\"col-md-3 text-center d-flex align-self-stretch ftco-animate\">\n");
-      out.write("            <div class=\"media block-6 services mb-md-0 mb-4\">\n");
-      out.write("              <div class=\"icon bg-color-1 active d-flex justify-content-center align-items-center mb-2\">\n");
-      out.write("            \t\t<span class=\"flaticon-shipped\"></span>\n");
-      out.write("              </div>\n");
-      out.write("              <div class=\"media-body\">\n");
-      out.write("                <h3 class=\"heading\">Free Shipping</h3>\n");
-      out.write("                <span>On order over $100</span>\n");
-      out.write("              </div>\n");
-      out.write("            </div>      \n");
+      out.write("    <div id=\"content_header\"></div>\n");
+      out.write("    <div id=\"site_content\">\n");
+      out.write("      <div id=\"banner\"></div>\n");
+      out.write("\t  <div id=\"sidebar_container\">\n");
+      out.write("        <div class=\"sidebar\">\n");
+      out.write("          <div class=\"sidebar_top\"></div>\n");
+      out.write("          <div class=\"sidebar_item\">\n");
+      out.write("            <!-- insert your sidebar items here -->\n");
+      out.write("            <h3>Latest News</h3>\n");
+      out.write("            <h4>New Website Launched</h4>\n");
+      out.write("            <h5>February 1st, 2014</h5>\n");
+      out.write("            <p>2014 sees the redesign of our website. Take a look around and let us know what you think.<br /><a href=\"#\">Read more</a></p>\n");
       out.write("          </div>\n");
-      out.write("          <div class=\"col-md-3 text-center d-flex align-self-stretch ftco-animate\">\n");
-      out.write("            <div class=\"media block-6 services mb-md-0 mb-4\">\n");
-      out.write("              <div class=\"icon bg-color-2 d-flex justify-content-center align-items-center mb-2\">\n");
-      out.write("            \t\t<span class=\"flaticon-diet\"></span>\n");
-      out.write("              </div>\n");
-      out.write("              <div class=\"media-body\">\n");
-      out.write("                <h3 class=\"heading\">Always Fresh</h3>\n");
-      out.write("                <span>Product well package</span>\n");
-      out.write("              </div>\n");
-      out.write("            </div>    \n");
-      out.write("          </div>\n");
-      out.write("          <div class=\"col-md-3 text-center d-flex align-self-stretch ftco-animate\">\n");
-      out.write("            <div class=\"media block-6 services mb-md-0 mb-4\">\n");
-      out.write("              <div class=\"icon bg-color-3 d-flex justify-content-center align-items-center mb-2\">\n");
-      out.write("            \t\t<span class=\"flaticon-award\"></span>\n");
-      out.write("              </div>\n");
-      out.write("              <div class=\"media-body\">\n");
-      out.write("                <h3 class=\"heading\">Superior Quality</h3>\n");
-      out.write("                <span>Quality Products</span>\n");
-      out.write("              </div>\n");
-      out.write("            </div>      \n");
-      out.write("          </div>\n");
-      out.write("          <div class=\"col-md-3 text-center d-flex align-self-stretch ftco-animate\">\n");
-      out.write("            <div class=\"media block-6 services mb-md-0 mb-4\">\n");
-      out.write("              <div class=\"icon bg-color-4 d-flex justify-content-center align-items-center mb-2\">\n");
-      out.write("            \t\t<span class=\"flaticon-customer-service\"></span>\n");
-      out.write("              </div>\n");
-      out.write("              <div class=\"media-body\">\n");
-      out.write("                <h3 class=\"heading\">Support</h3>\n");
-      out.write("                <span>24/7 Support</span>\n");
-      out.write("              </div>\n");
-      out.write("            </div>      \n");
-      out.write("          </div>\n");
+      out.write("          <div class=\"sidebar_base\"></div>\n");
       out.write("        </div>\n");
-      out.write("\t\t\t</div>\n");
-      out.write("\t\t</section>\n");
-      out.write("\n");
-      out.write("\t\t<section class=\"ftco-section ftco-category ftco-no-pt\">\n");
-      out.write("\t\t\t<div class=\"container\">\n");
-      out.write("\t\t\t\t<div class=\"row\">\n");
-      out.write("\t\t\t\t\t<div class=\"col-md-8\">\n");
-      out.write("\t\t\t\t\t\t<div class=\"row\">\n");
-      out.write("\t\t\t\t\t\t\t<div class=\"col-md-6 order-md-last align-items-stretch d-flex\">\n");
-      out.write("\t\t\t\t\t\t\t\t<div class=\"category-wrap-2 ftco-animate img align-self-stretch d-flex\" style=\"background-image: url(images/category.jpg);\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t<div class=\"text text-center\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<h2>Vegetables</h2>\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<p>Protect the health of every home</p>\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<p><a href=\"#\" class=\"btn btn-primary\">Shop now</a></p>\n");
-      out.write("\t\t\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t<div class=\"col-md-6\">\n");
-      out.write("\t\t\t\t\t\t\t\t<div class=\"category-wrap ftco-animate img mb-4 d-flex align-items-end\" style=\"background-image: url(images/category-1.jpg);\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t<div class=\"text px-3 py-1\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<h2 class=\"mb-0\"><a href=\"#\">Fruits</a></h2>\n");
-      out.write("\t\t\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t\t<div class=\"category-wrap ftco-animate img d-flex align-items-end\" style=\"background-image: url(images/category-2.jpg);\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t<div class=\"text px-3 py-1\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<h2 class=\"mb-0\"><a href=\"#\">Vegetables</a></h2>\n");
-      out.write("\t\t\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t</div>\n");
-      out.write("\n");
-      out.write("\t\t\t\t\t<div class=\"col-md-4\">\n");
-      out.write("\t\t\t\t\t\t<div class=\"category-wrap ftco-animate img mb-4 d-flex align-items-end\" style=\"background-image: url(images/category-3.jpg);\">\n");
-      out.write("\t\t\t\t\t\t\t<div class=\"text px-3 py-1\">\n");
-      out.write("\t\t\t\t\t\t\t\t<h2 class=\"mb-0\"><a href=\"#\">Juices</a></h2>\n");
-      out.write("\t\t\t\t\t\t\t</div>\t\t\n");
-      out.write("\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t<div class=\"category-wrap ftco-animate img d-flex align-items-end\" style=\"background-image: url(images/category-4.jpg);\">\n");
-      out.write("\t\t\t\t\t\t\t<div class=\"text px-3 py-1\">\n");
-      out.write("\t\t\t\t\t\t\t\t<h2 class=\"mb-0\"><a href=\"#\">Dried</a></h2>\n");
-      out.write("\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t</div>\n");
-      out.write("\t\t\t</div>\n");
-      out.write("\t\t</section>\n");
-      out.write("\n");
-      out.write("    <section class=\"ftco-section\">\n");
-      out.write("    \t<div class=\"container\">\n");
-      out.write("\t\t\t\t<div class=\"row justify-content-center mb-3 pb-3\">\n");
-      out.write("          <div class=\"col-md-12 heading-section text-center ftco-animate\">\n");
-      out.write("          \t<span class=\"subheading\">Featured Products</span>\n");
-      out.write("            <h2 class=\"mb-4\">Our Products</h2>\n");
-      out.write("            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>\n");
+      out.write("        <div class=\"sidebar\">\n");
+      out.write("          <div class=\"sidebar_top\"></div>\n");
+      out.write("          <div class=\"sidebar_item\">\n");
+      out.write("            <h3>Useful Links</h3>\n");
+      out.write("            <ul>\n");
+      out.write("              <li><a href=\"#\">link 1</a></li>\n");
+      out.write("              <li><a href=\"#\">link 2</a></li>\n");
+      out.write("              <li><a href=\"#\">link 3</a></li>\n");
+      out.write("              <li><a href=\"#\">link 4</a></li>\n");
+      out.write("            </ul>\n");
       out.write("          </div>\n");
-      out.write("        </div>   \t\t\n");
-      out.write("    \t</div>\n");
-      out.write("    \t<div class=\"container\">\n");
-      out.write("    \t\t<div class=\"row\">\n");
-      out.write("    \t\t\t<div class=\"col-md-6 col-lg-3 ftco-animate\">\n");
-      out.write("    \t\t\t\t<div class=\"product\">\n");
-      out.write("    \t\t\t\t\t<a href=\"#\" class=\"img-prod\"><img class=\"img-fluid\" src=\"images/product-1.jpg\" alt=\"Colorlib Template\">\n");
-      out.write("    \t\t\t\t\t\t<span class=\"status\">30%</span>\n");
-      out.write("    \t\t\t\t\t\t<div class=\"overlay\"></div>\n");
-      out.write("    \t\t\t\t\t</a>\n");
-      out.write("    \t\t\t\t\t<div class=\"text py-3 pb-4 px-3 text-center\">\n");
-      out.write("    \t\t\t\t\t\t<h3><a href=\"#\">Bell Pepper</a></h3>\n");
-      out.write("    \t\t\t\t\t\t<div class=\"d-flex\">\n");
-      out.write("    \t\t\t\t\t\t\t<div class=\"pricing\">\n");
-      out.write("\t\t    \t\t\t\t\t\t<p class=\"price\"><span class=\"mr-2 price-dc\">$120.00</span><span class=\"price-sale\">$80.00</span></p>\n");
-      out.write("\t\t    \t\t\t\t\t</div>\n");
-      out.write("\t    \t\t\t\t\t</div>\n");
-      out.write("\t    \t\t\t\t\t<div class=\"bottom-area d-flex px-3\">\n");
-      out.write("\t    \t\t\t\t\t\t<div class=\"m-auto d-flex\">\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"add-to-cart d-flex justify-content-center align-items-center text-center\">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-menu\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"buy-now d-flex justify-content-center align-items-center mx-1\">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-cart\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"heart d-flex justify-content-center align-items-center \">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-heart\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("    \t\t\t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t</div>\n");
-      out.write("    \t\t\t</div>\n");
-      out.write("    \t\t\t<div class=\"col-md-6 col-lg-3 ftco-animate\">\n");
-      out.write("    \t\t\t\t<div class=\"product\">\n");
-      out.write("    \t\t\t\t\t<a href=\"#\" class=\"img-prod\"><img class=\"img-fluid\" src=\"images/product-2.jpg\" alt=\"Colorlib Template\">\n");
-      out.write("    \t\t\t\t\t\t<div class=\"overlay\"></div>\n");
-      out.write("    \t\t\t\t\t</a>\n");
-      out.write("    \t\t\t\t\t<div class=\"text py-3 pb-4 px-3 text-center\">\n");
-      out.write("    \t\t\t\t\t\t<h3><a href=\"#\">Strawberry</a></h3>\n");
-      out.write("    \t\t\t\t\t\t<div class=\"d-flex\">\n");
-      out.write("    \t\t\t\t\t\t\t<div class=\"pricing\">\n");
-      out.write("\t\t    \t\t\t\t\t\t<p class=\"price\"><span>$120.00</span></p>\n");
-      out.write("\t\t    \t\t\t\t\t</div>\n");
-      out.write("\t    \t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t\t<div class=\"bottom-area d-flex px-3\">\n");
-      out.write("\t    \t\t\t\t\t\t<div class=\"m-auto d-flex\">\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"add-to-cart d-flex justify-content-center align-items-center text-center\">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-menu\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"buy-now d-flex justify-content-center align-items-center mx-1\">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-cart\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"heart d-flex justify-content-center align-items-center \">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-heart\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("    \t\t\t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t</div>\n");
-      out.write("    \t\t\t</div>\n");
-      out.write("    \t\t\t<div class=\"col-md-6 col-lg-3 ftco-animate\">\n");
-      out.write("    \t\t\t\t<div class=\"product\">\n");
-      out.write("    \t\t\t\t\t<a href=\"#\" class=\"img-prod\"><img class=\"img-fluid\" src=\"images/product-3.jpg\" alt=\"Colorlib Template\">\n");
-      out.write("\t    \t\t\t\t\t<div class=\"overlay\"></div>\n");
-      out.write("\t    \t\t\t\t</a>\n");
-      out.write("    \t\t\t\t\t<div class=\"text py-3 pb-4 px-3 text-center\">\n");
-      out.write("    \t\t\t\t\t\t<h3><a href=\"#\">Green Beans</a></h3>\n");
-      out.write("    \t\t\t\t\t\t<div class=\"d-flex\">\n");
-      out.write("    \t\t\t\t\t\t\t<div class=\"pricing\">\n");
-      out.write("\t\t    \t\t\t\t\t\t<p class=\"price\"><span>$120.00</span></p>\n");
-      out.write("\t\t    \t\t\t\t\t</div>\n");
-      out.write("\t    \t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t\t<div class=\"bottom-area d-flex px-3\">\n");
-      out.write("\t    \t\t\t\t\t\t<div class=\"m-auto d-flex\">\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"add-to-cart d-flex justify-content-center align-items-center text-center\">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-menu\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"buy-now d-flex justify-content-center align-items-center mx-1\">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-cart\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"heart d-flex justify-content-center align-items-center \">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-heart\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("    \t\t\t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t</div>\n");
-      out.write("    \t\t\t</div>\n");
-      out.write("    \t\t\t<div class=\"col-md-6 col-lg-3 ftco-animate\">\n");
-      out.write("    \t\t\t\t<div class=\"product\">\n");
-      out.write("    \t\t\t\t\t<a href=\"#\" class=\"img-prod\"><img class=\"img-fluid\" src=\"images/product-4.jpg\" alt=\"Colorlib Template\">\n");
-      out.write("    \t\t\t\t\t\t<div class=\"overlay\"></div>\n");
-      out.write("    \t\t\t\t\t</a>\n");
-      out.write("    \t\t\t\t\t<div class=\"text py-3 pb-4 px-3 text-center\">\n");
-      out.write("    \t\t\t\t\t\t<h3><a href=\"#\">Purple Cabbage</a></h3>\n");
-      out.write("    \t\t\t\t\t\t<div class=\"d-flex\">\n");
-      out.write("    \t\t\t\t\t\t\t<div class=\"pricing\">\n");
-      out.write("\t\t    \t\t\t\t\t\t<p class=\"price\"><span>$120.00</span></p>\n");
-      out.write("\t\t    \t\t\t\t\t</div>\n");
-      out.write("\t    \t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t\t<div class=\"bottom-area d-flex px-3\">\n");
-      out.write("\t    \t\t\t\t\t\t<div class=\"m-auto d-flex\">\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"add-to-cart d-flex justify-content-center align-items-center text-center\">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-menu\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"buy-now d-flex justify-content-center align-items-center mx-1\">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-cart\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"heart d-flex justify-content-center align-items-center \">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-heart\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("    \t\t\t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t</div>\n");
-      out.write("    \t\t\t</div>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("    \t\t\t<div class=\"col-md-6 col-lg-3 ftco-animate\">\n");
-      out.write("    \t\t\t\t<div class=\"product\">\n");
-      out.write("    \t\t\t\t\t<a href=\"#\" class=\"img-prod\"><img class=\"img-fluid\" src=\"images/product-5.jpg\" alt=\"Colorlib Template\">\n");
-      out.write("    \t\t\t\t\t\t<span class=\"status\">30%</span>\n");
-      out.write("    \t\t\t\t\t\t<div class=\"overlay\"></div>\n");
-      out.write("    \t\t\t\t\t</a>\n");
-      out.write("    \t\t\t\t\t<div class=\"text py-3 pb-4 px-3 text-center\">\n");
-      out.write("    \t\t\t\t\t\t<h3><a href=\"#\">Tomatoe</a></h3>\n");
-      out.write("    \t\t\t\t\t\t<div class=\"d-flex\">\n");
-      out.write("    \t\t\t\t\t\t\t<div class=\"pricing\">\n");
-      out.write("\t\t    \t\t\t\t\t\t<p class=\"price\"><span class=\"mr-2 price-dc\">$120.00</span><span class=\"price-sale\">$80.00</span></p>\n");
-      out.write("\t\t    \t\t\t\t\t</div>\n");
-      out.write("\t    \t\t\t\t\t</div>\n");
-      out.write("\t    \t\t\t\t\t<div class=\"bottom-area d-flex px-3\">\n");
-      out.write("\t    \t\t\t\t\t\t<div class=\"m-auto d-flex\">\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"add-to-cart d-flex justify-content-center align-items-center text-center\">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-menu\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"buy-now d-flex justify-content-center align-items-center mx-1\">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-cart\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"heart d-flex justify-content-center align-items-center \">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-heart\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("    \t\t\t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t</div>\n");
-      out.write("    \t\t\t</div>\n");
-      out.write("    \t\t\t<div class=\"col-md-6 col-lg-3 ftco-animate\">\n");
-      out.write("    \t\t\t\t<div class=\"product\">\n");
-      out.write("    \t\t\t\t\t<a href=\"#\" class=\"img-prod\"><img class=\"img-fluid\" src=\"images/product-6.jpg\" alt=\"Colorlib Template\">\n");
-      out.write("    \t\t\t\t\t\t<div class=\"overlay\"></div>\n");
-      out.write("    \t\t\t\t\t</a>\n");
-      out.write("    \t\t\t\t\t<div class=\"text py-3 pb-4 px-3 text-center\">\n");
-      out.write("    \t\t\t\t\t\t<h3><a href=\"#\">Brocolli</a></h3>\n");
-      out.write("    \t\t\t\t\t\t<div class=\"d-flex\">\n");
-      out.write("    \t\t\t\t\t\t\t<div class=\"pricing\">\n");
-      out.write("\t\t    \t\t\t\t\t\t<p class=\"price\"><span>$120.00</span></p>\n");
-      out.write("\t\t    \t\t\t\t\t</div>\n");
-      out.write("\t    \t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t\t<div class=\"bottom-area d-flex px-3\">\n");
-      out.write("\t    \t\t\t\t\t\t<div class=\"m-auto d-flex\">\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"add-to-cart d-flex justify-content-center align-items-center text-center\">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-menu\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"buy-now d-flex justify-content-center align-items-center mx-1\">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-cart\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"heart d-flex justify-content-center align-items-center \">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-heart\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("    \t\t\t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t</div>\n");
-      out.write("    \t\t\t</div>\n");
-      out.write("    \t\t\t<div class=\"col-md-6 col-lg-3 ftco-animate\">\n");
-      out.write("    \t\t\t\t<div class=\"product\">\n");
-      out.write("    \t\t\t\t\t<a href=\"#\" class=\"img-prod\"><img class=\"img-fluid\" src=\"images/product-7.jpg\" alt=\"Colorlib Template\">\n");
-      out.write("\t    \t\t\t\t\t<div class=\"overlay\"></div>\n");
-      out.write("\t    \t\t\t\t</a>\n");
-      out.write("    \t\t\t\t\t<div class=\"text py-3 pb-4 px-3 text-center\">\n");
-      out.write("    \t\t\t\t\t\t<h3><a href=\"#\">Carrots</a></h3>\n");
-      out.write("    \t\t\t\t\t\t<div class=\"d-flex\">\n");
-      out.write("    \t\t\t\t\t\t\t<div class=\"pricing\">\n");
-      out.write("\t\t    \t\t\t\t\t\t<p class=\"price\"><span>$120.00</span></p>\n");
-      out.write("\t\t    \t\t\t\t\t</div>\n");
-      out.write("\t    \t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t\t<div class=\"bottom-area d-flex px-3\">\n");
-      out.write("\t    \t\t\t\t\t\t<div class=\"m-auto d-flex\">\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"add-to-cart d-flex justify-content-center align-items-center text-center\">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-menu\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"buy-now d-flex justify-content-center align-items-center mx-1\">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-cart\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"heart d-flex justify-content-center align-items-center \">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-heart\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("    \t\t\t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t</div>\n");
-      out.write("    \t\t\t</div>\n");
-      out.write("    \t\t\t<div class=\"col-md-6 col-lg-3 ftco-animate\">\n");
-      out.write("    \t\t\t\t<div class=\"product\">\n");
-      out.write("    \t\t\t\t\t<a href=\"#\" class=\"img-prod\"><img class=\"img-fluid\" src=\"images/product-8.jpg\" alt=\"Colorlib Template\">\n");
-      out.write("    \t\t\t\t\t\t<div class=\"overlay\"></div>\n");
-      out.write("    \t\t\t\t\t</a>\n");
-      out.write("    \t\t\t\t\t<div class=\"text py-3 pb-4 px-3 text-center\">\n");
-      out.write("    \t\t\t\t\t\t<h3><a href=\"#\">Fruit Juice</a></h3>\n");
-      out.write("    \t\t\t\t\t\t<div class=\"d-flex\">\n");
-      out.write("    \t\t\t\t\t\t\t<div class=\"pricing\">\n");
-      out.write("\t\t    \t\t\t\t\t\t<p class=\"price\"><span>$120.00</span></p>\n");
-      out.write("\t\t    \t\t\t\t\t</div>\n");
-      out.write("\t    \t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t\t<div class=\"bottom-area d-flex px-3\">\n");
-      out.write("\t    \t\t\t\t\t\t<div class=\"m-auto d-flex\">\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"add-to-cart d-flex justify-content-center align-items-center text-center\">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-menu\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"buy-now d-flex justify-content-center align-items-center mx-1\">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-cart\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("\t    \t\t\t\t\t\t\t<a href=\"#\" class=\"heart d-flex justify-content-center align-items-center \">\n");
-      out.write("\t    \t\t\t\t\t\t\t\t<span><i class=\"ion-ios-heart\"></i></span>\n");
-      out.write("\t    \t\t\t\t\t\t\t</a>\n");
-      out.write("    \t\t\t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t\t</div>\n");
-      out.write("    \t\t\t\t</div>\n");
-      out.write("    \t\t\t</div>\n");
-      out.write("    \t\t</div>\n");
-      out.write("    \t</div>\n");
-      out.write("    </section>\n");
-      out.write("\t\t\n");
-      out.write("\t\t<section class=\"ftco-section img\" style=\"background-image: url(images/bg_3.jpg);\">\n");
-      out.write("    \t<div class=\"container\">\n");
-      out.write("\t\t\t\t<div class=\"row justify-content-end\">\n");
-      out.write("          <div class=\"col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate\">\n");
-      out.write("          \t<span class=\"subheading\">Best Price For You</span>\n");
-      out.write("            <h2 class=\"mb-4\">Deal of the day</h2>\n");
-      out.write("            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>\n");
-      out.write("            <h3><a href=\"#\">Spinach</a></h3>\n");
-      out.write("            <span class=\"price\">$10 <a href=\"#\">now $5 only</a></span>\n");
-      out.write("            <div id=\"timer\" class=\"d-flex mt-5\">\n");
-      out.write("\t\t\t\t\t\t  <div class=\"time\" id=\"days\"></div>\n");
-      out.write("\t\t\t\t\t\t  <div class=\"time pl-3\" id=\"hours\"></div>\n");
-      out.write("\t\t\t\t\t\t  <div class=\"time pl-3\" id=\"minutes\"></div>\n");
-      out.write("\t\t\t\t\t\t  <div class=\"time pl-3\" id=\"seconds\"></div>\n");
-      out.write("\t\t\t\t\t\t</div>\n");
-      out.write("          </div>\n");
-      out.write("        </div>   \t\t\n");
-      out.write("    \t</div>\n");
-      out.write("    </section>\n");
-      out.write("\n");
-      out.write("    <section class=\"ftco-section testimony-section\">\n");
-      out.write("      <div class=\"container\">\n");
-      out.write("        <div class=\"row justify-content-center mb-5 pb-3\">\n");
-      out.write("          <div class=\"col-md-7 heading-section ftco-animate text-center\">\n");
-      out.write("          \t<span class=\"subheading\">Testimony</span>\n");
-      out.write("            <h2 class=\"mb-4\">Our satisfied customer says</h2>\n");
-      out.write("            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>\n");
-      out.write("          </div>\n");
+      out.write("          <div class=\"sidebar_base\"></div>\n");
       out.write("        </div>\n");
-      out.write("        <div class=\"row ftco-animate\">\n");
-      out.write("          <div class=\"col-md-12\">\n");
-      out.write("            <div class=\"carousel-testimony owl-carousel\">\n");
-      out.write("              <div class=\"item\">\n");
-      out.write("                <div class=\"testimony-wrap p-4 pb-5\">\n");
-      out.write("                  <div class=\"user-img mb-5\" style=\"background-image: url(images/person_1.jpg)\">\n");
-      out.write("                    <span class=\"quote d-flex align-items-center justify-content-center\">\n");
-      out.write("                      <i class=\"icon-quote-left\"></i>\n");
-      out.write("                    </span>\n");
-      out.write("                  </div>\n");
-      out.write("                  <div class=\"text text-center\">\n");
-      out.write("                    <p class=\"mb-5 pl-4 line\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>\n");
-      out.write("                    <p class=\"name\">Garreth Smith</p>\n");
-      out.write("                    <span class=\"position\">Marketing Manager</span>\n");
-      out.write("                  </div>\n");
-      out.write("                </div>\n");
-      out.write("              </div>\n");
-      out.write("              <div class=\"item\">\n");
-      out.write("                <div class=\"testimony-wrap p-4 pb-5\">\n");
-      out.write("                  <div class=\"user-img mb-5\" style=\"background-image: url(images/person_2.jpg)\">\n");
-      out.write("                    <span class=\"quote d-flex align-items-center justify-content-center\">\n");
-      out.write("                      <i class=\"icon-quote-left\"></i>\n");
-      out.write("                    </span>\n");
-      out.write("                  </div>\n");
-      out.write("                  <div class=\"text text-center\">\n");
-      out.write("                    <p class=\"mb-5 pl-4 line\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>\n");
-      out.write("                    <p class=\"name\">Garreth Smith</p>\n");
-      out.write("                    <span class=\"position\">Interface Designer</span>\n");
-      out.write("                  </div>\n");
-      out.write("                </div>\n");
-      out.write("              </div>\n");
-      out.write("              <div class=\"item\">\n");
-      out.write("                <div class=\"testimony-wrap p-4 pb-5\">\n");
-      out.write("                  <div class=\"user-img mb-5\" style=\"background-image: url(images/person_3.jpg)\">\n");
-      out.write("                    <span class=\"quote d-flex align-items-center justify-content-center\">\n");
-      out.write("                      <i class=\"icon-quote-left\"></i>\n");
-      out.write("                    </span>\n");
-      out.write("                  </div>\n");
-      out.write("                  <div class=\"text text-center\">\n");
-      out.write("                    <p class=\"mb-5 pl-4 line\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>\n");
-      out.write("                    <p class=\"name\">Garreth Smith</p>\n");
-      out.write("                    <span class=\"position\">UI Designer</span>\n");
-      out.write("                  </div>\n");
-      out.write("                </div>\n");
-      out.write("              </div>\n");
-      out.write("              <div class=\"item\">\n");
-      out.write("                <div class=\"testimony-wrap p-4 pb-5\">\n");
-      out.write("                  <div class=\"user-img mb-5\" style=\"background-image: url(images/person_1.jpg)\">\n");
-      out.write("                    <span class=\"quote d-flex align-items-center justify-content-center\">\n");
-      out.write("                      <i class=\"icon-quote-left\"></i>\n");
-      out.write("                    </span>\n");
-      out.write("                  </div>\n");
-      out.write("                  <div class=\"text text-center\">\n");
-      out.write("                    <p class=\"mb-5 pl-4 line\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>\n");
-      out.write("                    <p class=\"name\">Garreth Smith</p>\n");
-      out.write("                    <span class=\"position\">Web Developer</span>\n");
-      out.write("                  </div>\n");
-      out.write("                </div>\n");
-      out.write("              </div>\n");
-      out.write("              <div class=\"item\">\n");
-      out.write("                <div class=\"testimony-wrap p-4 pb-5\">\n");
-      out.write("                  <div class=\"user-img mb-5\" style=\"background-image: url(images/person_1.jpg)\">\n");
-      out.write("                    <span class=\"quote d-flex align-items-center justify-content-center\">\n");
-      out.write("                      <i class=\"icon-quote-left\"></i>\n");
-      out.write("                    </span>\n");
-      out.write("                  </div>\n");
-      out.write("                  <div class=\"text text-center\">\n");
-      out.write("                    <p class=\"mb-5 pl-4 line\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>\n");
-      out.write("                    <p class=\"name\">Garreth Smith</p>\n");
-      out.write("                    <span class=\"position\">System Analyst</span>\n");
-      out.write("                  </div>\n");
-      out.write("                </div>\n");
-      out.write("              </div>\n");
-      out.write("            </div>\n");
-      out.write("          </div>\n");
-      out.write("        </div>\n");
+      out.write("        \n");
       out.write("      </div>\n");
-      out.write("    </section>\n");
+      out.write("      <div id=\"content\">\n");
+      out.write("        <!-- insert the page content here -->\n");
+      out.write("        ");
+      //  c:choose
+      org.apache.taglibs.standard.tag.common.core.ChooseTag _jspx_th_c_choose_0 = (org.apache.taglibs.standard.tag.common.core.ChooseTag) _jspx_tagPool_c_choose.get(org.apache.taglibs.standard.tag.common.core.ChooseTag.class);
+      _jspx_th_c_choose_0.setPageContext(_jspx_page_context);
+      _jspx_th_c_choose_0.setParent(null);
+      int _jspx_eval_c_choose_0 = _jspx_th_c_choose_0.doStartTag();
+      if (_jspx_eval_c_choose_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\n");
+          out.write("            ");
+          if (_jspx_meth_c_when_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
+            return;
+          out.write("\n");
+          out.write("            ");
+          //  c:when
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_1 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_1.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='bahan'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_1 = _jspx_th_c_when_1.doStartTag();
+          if (_jspx_eval_c_when_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+            do {
+              out.write("\n");
+              out.write("                ");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("<!DOCTYPE html>\n");
+              out.write("<head>\n");
+              out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"style/style.css\" />\n");
+              out.write("\n");
+              out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+              out.write("        <title>Bahan Mamma Masak</title>\n");
+              out.write("    </head>\n");
+              out.write("    <body>\n");
+              out.write("  \n");
+              out.write("      <div id=\"content\">\n");
+              out.write("        <!-- insert the page content here -->\n");
+              out.write("        <form method=\"POST\" action=\"BahanServlet\">\n");
+              out.write("            <h1>Tambah Data Bahan</h1>\n");
+              out.write("            <table>\n");
+              out.write("                <tr><div>\n");
+              out.write("                    <td><label for=\"inputEmail3\">Kode Bahan</label></td>\n");
+              out.write("                    <div class=\"col-sm-10\">\n");
+              out.write("                        <td>\n");
+              out.write("                            ");
+
+                                try {
+                                    ResultSet rs = null;
+                                    koneksi kon = new koneksi();
+                                    rs = kon.stmt.executeQuery("select max(right(kodebahan,4)) as no from bahan");
+                                    while (rs.next()) {
+                                        if (rs.first() == false) {
+                                            out.println("<input type='text' class='form-control' readonly value='BOOO1' name='kodebahan' >");
+                                        } else {
+                                            rs.last();
+                                            int autonokm = rs.getInt(1) + 1;
+                                            String nomorkm = String.valueOf(autonokm);
+                                            int noLong = nomorkm.length();
+                                            for (int a = 1; a < 5 - noLong; a++) {
+                                                nomorkm = "0" + nomorkm;
+                                            }
+                                            String nomerkm = "B" + nomorkm;
+                                            out.println("<input type='text' class='form_control' readyonly value='" + nomerkm + "' name='kodebahan'>");
+                                        }
+                                    }
+                                } catch (Exception e) {
+                                    out.println(e);
+                                }
+                            
+              out.write("\n");
+              out.write("                        </td>\n");
+              out.write("                    </div>\n");
+              out.write("                </div>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Nama Bahan</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"namabahan\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                        <td>Jumlah</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"jumlah\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Kode Supplier</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"kodesupp\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>ID User</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"iduser\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>\n");
+              out.write("                        <input type=\"reset\" value=\"Batal\">\n");
+              out.write("                        <input type=\"submit\" value=\"Simpan\" name=\"aksi\">\n");
+              out.write("                    </td>\n");
+              out.write("                </tr>\n");
+              out.write("            </table>\n");
+              out.write("        </form>\n");
+              out.write("                        <br>\n");
+              out.write("        <form action=\"\" method=\"post\">\n");
+              out.write("            Cari Data Bahan : <input type=\"text\" name=\"cari\" value=\"");
+              out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.cari}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+              out.write("\">\n");
+              out.write("            <input type=\"submit\" value=\"Cari\" class=\"button\"><br>\n");
+              out.write("\n");
+              out.write("        </form><br>\n");
+              out.write("\n");
+              out.write("        <table border=\"1\">\n");
+              out.write("            <tr align=\"center\">\n");
+              out.write("                <th>KODE BAHAN</th>\n");
+              out.write("                <th>NAMA BAHAN</th>\n");
+              out.write("                <th>JUMLAH</th>\n");
+              out.write("                <th>KODE SUPPLIER</th>\n");
+              out.write("                <th>ID USER</th>\n");
+              out.write("                <th>AKSI</th>\n");
+              out.write("            </tr>\n");
+              out.write("            ");
+
+                String kodebahan = null;
+                String namabahan = null;
+                String jumlah = null;
+                String kodesupp = null;
+                String iduser = null;
+                ResultSet rs = null;
+
+                koneksi kon = new koneksi();
+
+                rs = kon.stmt.executeQuery("SELECT * FROM bahan ORDER BY kodebahan asc");
+                while (rs.next()) {
+                    kodebahan = rs.getString("kodebahan");
+                    namabahan = rs.getString(2);
+                    jumlah = rs.getString(3);
+                    kodesupp = rs.getString(4);
+                    iduser = rs.getString(5);
+
+            
+              out.write("\n");
+              out.write("\n");
+              out.write("            <tr>\n");
+              out.write("                <td>");
+ out.println(kodebahan);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(namabahan);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(jumlah);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(kodesupp);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(iduser);
+              out.write("</td>\n");
+              out.write("                <td><a href=\"beranda.jsp?halaman=editbahan&kodebahan=");
+ out.println(kodebahan);
+              out.write("\">Lihat Detail</a></td>\n");
+              out.write("            </tr>\n");
+              out.write("            ");
+ } 
+              out.write("\n");
+              out.write("\n");
+              out.write("        </table>\n");
+              out.write("        ");
+ kon.close();
+              out.write("\n");
+              out.write("        \n");
+              out.write("      </div>\n");
+              out.write("</body>\n");
+              out.write("</html>");
+              out.write("\n");
+              out.write("            ");
+              int evalDoAfterBody = _jspx_th_c_when_1.doAfterBody();
+              if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                break;
+            } while (true);
+          }
+          if (_jspx_th_c_when_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_1);
+            return;
+          }
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_1);
+          out.write("\n");
+          out.write("            ");
+          //  c:when
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_2 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_2.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='editbahan'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_2 = _jspx_th_c_when_2.doStartTag();
+          if (_jspx_eval_c_when_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+            do {
+              out.write("\n");
+              out.write("                ");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+
+    String kodebahan = request.getParameter("kodebahan");
+    String namabahan = null;
+    String jumlah = null;
+    String kodesupp = null;
+    String iduser = null;
+    ResultSet rs = null;
+    koneksi kon = new koneksi();
+    rs = kon.stmt.executeQuery("select * from bahan where kodebahan='" + kodebahan + "'");
+    if (rs.next()) {
+        kodebahan = rs.getString(1);
+        namabahan = rs.getString(2);
+        jumlah = rs.getString(3);
+        kodesupp = rs.getString(4);
+        iduser = rs.getString(5);
+    }
+
+              out.write("\n");
+              out.write("\n");
+              out.write("<!DOCTYPE html>\n");
+              out.write("<html>\n");
+              out.write("    <head>\n");
+              out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+              out.write("        <title>Ubah Data Mater Bahan</title>\n");
+              out.write("    </head>\n");
+              out.write("    <body>\n");
+              out.write("        <form action=\"BahanServlet\" method=\"POST\">\n");
+              out.write("            <table>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td colspan=\"3\">Ubah Data Bahan</td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Kode Bahan</td>\n");
+              out.write("                    <td>:</td>\n");
+              out.write("                    <td><input type=\"text\" value=\"");
+              out.print(kodebahan);
+              out.write("\" readonly>\n");
+              out.write("                    <td><input type=\"hidden\" value=\"");
+              out.print(kodebahan);
+              out.write("\" name=\"kodebahan\">\n");
+              out.write("                    </td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Nama Bahan</td>\n");
+              out.write("                    <td>:</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"namabahan\" value=\"");
+              out.print(namabahan);
+              out.write("\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Jumlah</td>\n");
+              out.write("                    <td>:</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"jumlah\" value=\"");
+              out.print(jumlah);
+              out.write("\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Kode Supplier</td>\n");
+              out.write("                    <td>:</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"kodesupp\" value=\"");
+              out.print(kodesupp);
+              out.write("\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>ID User</td>\n");
+              out.write("                    <td>:</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"iduser\" value=\"");
+              out.print(iduser);
+              out.write("\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td colspan=\"3\">\n");
+              out.write("                        <input type=\"submit\" name=\"aksi\" value=\"Update\"> <input type=\"submit\" name=\"aksi\" value=\"Delete\">  <a href=\"beranda.jsp?halaman=tampilbhn\">[Lihat Data]</a>\n");
+              out.write("                    </td>\n");
+              out.write("                </tr>\n");
+              out.write("            </table>            \n");
+              out.write("        </form>\n");
+              out.write("    </body>\n");
+              out.write("</html>\n");
+              out.write("\n");
+              out.write("            ");
+              int evalDoAfterBody = _jspx_th_c_when_2.doAfterBody();
+              if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                break;
+            } while (true);
+          }
+          if (_jspx_th_c_when_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_2);
+            return;
+          }
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_2);
+          out.write("\n");
+          out.write("            ");
+          //  c:when
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_3 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_3.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_3.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='tampilbhn'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_3 = _jspx_th_c_when_3.doStartTag();
+          if (_jspx_eval_c_when_3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+            do {
+              out.write("\n");
+              out.write("                ");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("<!DOCTYPE html>\n");
+              out.write("<head>\n");
+              out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"style/style.css\" />\n");
+              out.write("\n");
+              out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+              out.write("        <title>Bahan Mamma Masak</title>\n");
+              out.write("    </head>\n");
+              out.write("    <body>\n");
+              out.write("  \n");
+              out.write("      <div id=\"content\">\n");
+              out.write("        <!-- insert the page content here -->\n");
+              out.write("        <form method=\"POST\" action=\"BahanServlet\">\n");
+              out.write("            <h1>Tambah Data Bahan</h1>\n");
+              out.write("            <table>\n");
+              out.write("                <tr><div>\n");
+              out.write("                    <td><label for=\"inputEmail3\">Kode Bahan</label></td>\n");
+              out.write("                    <div class=\"col-sm-10\">\n");
+              out.write("                        <td>\n");
+              out.write("                            ");
+
+                                try {
+                                    ResultSet rs = null;
+                                    koneksi kon = new koneksi();
+                                    rs = kon.stmt.executeQuery("select max(right(kodebahan,4)) as no from bahan");
+                                    while (rs.next()) {
+                                        if (rs.first() == false) {
+                                            out.println("<input type='text' class='form-control' readonly value='BOOO1' name='kodebahan' >");
+                                        } else {
+                                            rs.last();
+                                            int autonokm = rs.getInt(1) + 1;
+                                            String nomorkm = String.valueOf(autonokm);
+                                            int noLong = nomorkm.length();
+                                            for (int a = 1; a < 5 - noLong; a++) {
+                                                nomorkm = "0" + nomorkm;
+                                            }
+                                            String nomerkm = "B" + nomorkm;
+                                            out.println("<input type='text' class='form_control' readyonly value='" + nomerkm + "' name='kodebahan'>");
+                                        }
+                                    }
+                                } catch (Exception e) {
+                                    out.println(e);
+                                }
+                            
+              out.write("\n");
+              out.write("                        </td>\n");
+              out.write("                    </div>\n");
+              out.write("                </div>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Nama Bahan</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"namabahan\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                        <td>Jumlah</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"jumlah\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Kode Supplier</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"kodesupp\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>ID User</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"iduser\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>\n");
+              out.write("                        <input type=\"reset\" value=\"Batal\">\n");
+              out.write("                        <input type=\"submit\" value=\"Simpan\" name=\"aksi\">\n");
+              out.write("                    </td>\n");
+              out.write("                </tr>\n");
+              out.write("            </table>\n");
+              out.write("        </form>\n");
+              out.write("                        <br>\n");
+              out.write("        <form action=\"\" method=\"post\">\n");
+              out.write("            Cari Data Bahan : <input type=\"text\" name=\"cari\" value=\"");
+              out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.cari}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+              out.write("\">\n");
+              out.write("            <input type=\"submit\" value=\"Cari\" class=\"button\"><br>\n");
+              out.write("\n");
+              out.write("        </form><br>\n");
+              out.write("\n");
+              out.write("        <table border=\"1\">\n");
+              out.write("            <tr align=\"center\">\n");
+              out.write("                <th>KODE BAHAN</th>\n");
+              out.write("                <th>NAMA BAHAN</th>\n");
+              out.write("                <th>JUMLAH</th>\n");
+              out.write("                <th>KODE SUPPLIER</th>\n");
+              out.write("                <th>ID USER</th>\n");
+              out.write("                <th>AKSI</th>\n");
+              out.write("            </tr>\n");
+              out.write("            ");
+
+                String kodebahan = null;
+                String namabahan = null;
+                String jumlah = null;
+                String kodesupp = null;
+                String iduser = null;
+                ResultSet rs = null;
+
+                koneksi kon = new koneksi();
+
+                rs = kon.stmt.executeQuery("SELECT * FROM bahan ORDER BY kodebahan asc");
+                while (rs.next()) {
+                    kodebahan = rs.getString("kodebahan");
+                    namabahan = rs.getString(2);
+                    jumlah = rs.getString(3);
+                    kodesupp = rs.getString(4);
+                    iduser = rs.getString(5);
+
+            
+              out.write("\n");
+              out.write("\n");
+              out.write("            <tr>\n");
+              out.write("                <td>");
+ out.println(kodebahan);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(namabahan);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(jumlah);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(kodesupp);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(iduser);
+              out.write("</td>\n");
+              out.write("                <td><a href=\"beranda.jsp?halaman=editbahan&kodebahan=");
+ out.println(kodebahan);
+              out.write("\">Lihat Detail</a></td>\n");
+              out.write("            </tr>\n");
+              out.write("            ");
+ } 
+              out.write("\n");
+              out.write("\n");
+              out.write("        </table>\n");
+              out.write("        ");
+ kon.close();
+              out.write("\n");
+              out.write("        \n");
+              out.write("      </div>\n");
+              out.write("</body>\n");
+              out.write("</html>");
+              out.write("\n");
+              out.write("            ");
+              int evalDoAfterBody = _jspx_th_c_when_3.doAfterBody();
+              if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                break;
+            } while (true);
+          }
+          if (_jspx_th_c_when_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_3);
+            return;
+          }
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_3);
+          out.write("\n");
+          out.write("            ");
+          //  c:when
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_4 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_4.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_4.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='menu'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_4 = _jspx_th_c_when_4.doStartTag();
+          if (_jspx_eval_c_when_4 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+            do {
+              out.write("\n");
+              out.write("                ");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("<!DOCTYPE html>\n");
+              out.write("<html>\n");
+              out.write("    <head>\n");
+              out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+              out.write("        <title>Menu Mamma Masak</title>\n");
+              out.write("    </head>\n");
+              out.write("    <body>\n");
+              out.write("        <form method=\"POST\" action=\"ServletMenu\">\n");
+              out.write("            <h1>Tambah Data Menu</h1>\n");
+              out.write("            <table>\n");
+              out.write("                <tr><div>\n");
+              out.write("                    <td><label for=\"inputEmail3\">Kode Menu</label></td>\n");
+              out.write("                    <div class=\"col-sm-10\">\n");
+              out.write("                        <td>\n");
+              out.write("                            ");
+
+                                try {
+                                    ResultSet rs = null;
+                                    koneksi kon = new koneksi();
+                                    rs = kon.stmt.executeQuery("select max(right(kdmenu,4)) as no from menu");
+                                    while (rs.next()) {
+                                        if (rs.first() == false) {
+                                            out.println("<input type='text' class='form-control' readonly value='MOOO1' name='kdmenu' >");
+                                        } else {
+                                            rs.last();
+                                            int autonokm = rs.getInt(1) + 1;
+                                            String nomorkm = String.valueOf(autonokm);
+                                            int noLong = nomorkm.length();
+                                            for (int a = 1; a < 5 - noLong; a++) {
+                                                nomorkm = "0" + nomorkm;
+                                            }
+                                            String nomerkm = "M" + nomorkm;
+                                            out.println("<input type='text' class='form_control' readyonly value='" + nomerkm + "' name='kdmenu'>");
+                                        }
+                                    }
+                                } catch (Exception e) {
+                                    out.println(e);
+                                }
+                            
+              out.write("\n");
+              out.write("                        </td>\n");
+              out.write("                    </div>\n");
+              out.write("                </div>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Nama Menu</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"nmmenu\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                        <td>Kode Kategori</td>\n");
+              out.write("                    <td>\n");
+              out.write("                        <select name=\"kodekategori\">\n");
+              out.write("                            <option value=\"\">Pilih Kategori</option>\n");
+              out.write("                            <option value=\"K0001\">Makanan</option>\n");
+              out.write("                            <option value=\"K0002\">Minuman</option>\n");
+              out.write("                        </select></td>\n");
+              out.write("                    \n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Harga</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"harga\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Stok</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"stok\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>\n");
+              out.write("                        <input type=\"reset\" value=\"Batal\">\n");
+              out.write("                        <input type=\"submit\" value=\"Simpan\" name=\"aksi\">\n");
+              out.write("                    </td>\n");
+              out.write("                </tr>\n");
+              out.write("            </table>\n");
+              out.write("        </form>\n");
+              out.write("                        <br>\n");
+              out.write("        <form action=\"\" method=\"post\">\n");
+              out.write("            Cari Data Menu : <input type=\"text\" name=\"cari\" value=\"");
+              out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.cari}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+              out.write("\">\n");
+              out.write("            <input type=\"submit\" value=\"Cari\" class=\"button\"><br>\n");
+              out.write("\n");
+              out.write("        </form><br>\n");
+              out.write("\n");
+              out.write("        <table border=\"1\">\n");
+              out.write("            <tr align=\"center\">\n");
+              out.write("                <th>KODE MENU</th>\n");
+              out.write("                <th>NAMA MENU</th>\n");
+              out.write("                <th>KODE KATEGORI</th>\n");
+              out.write("                <th>HARGA</th>\n");
+              out.write("                <th>STOK</th>\n");
+              out.write("                <th>AKSI</th>\n");
+              out.write("            </tr>\n");
+              out.write("            ");
+
+                String kodemenu = null;
+                String namamenu = null;
+                String kodekategori = null;
+                String harga = null;
+                String stok = null;
+                ResultSet rs = null;
+
+                koneksi kon = new koneksi();
+
+                rs = kon.stmt.executeQuery("SELECT * FROM menu ORDER BY kdmenu asc");
+                while (rs.next()) {
+                    kodemenu = rs.getString("kdmenu");
+                    namamenu = rs.getString(2);
+                    kodekategori = rs.getString(3);
+                    harga = rs.getString(4);
+                    stok = rs.getString(5);
+
+            
+              out.write("\n");
+              out.write("\n");
+              out.write("            <tr>\n");
+              out.write("                <td>");
+ out.println(kodemenu);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(namamenu);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(kodekategori);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(harga);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(stok);
+              out.write("</td>\n");
+              out.write("                <td><a href=\"beranda.jsp?halaman=editmenu&kdmenu=");
+ out.println(kodemenu);
+              out.write("\">Lihat Detail</a></td>\n");
+              out.write("            </tr>\n");
+              out.write("            ");
+ } 
+              out.write("\n");
+              out.write("\n");
+              out.write("        </table>\n");
+              out.write("        ");
+ kon.close();
+              out.write("\n");
+              out.write("        \n");
+              out.write("    </body>\n");
+              out.write("</html>\n");
+              out.write("\n");
+              out.write("            ");
+              int evalDoAfterBody = _jspx_th_c_when_4.doAfterBody();
+              if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                break;
+            } while (true);
+          }
+          if (_jspx_th_c_when_4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_4);
+            return;
+          }
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_4);
+          out.write("\n");
+          out.write("            ");
+          //  c:when
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_5 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_5.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_5.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='editmenu'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_5 = _jspx_th_c_when_5.doStartTag();
+          if (_jspx_eval_c_when_5 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+            do {
+              out.write("\n");
+              out.write("                ");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+
+    String kodemenu = request.getParameter("kdmenu");
+    String namamenu = null;
+    String kodekategori = null;
+    String harga = null;
+    String stok = null;
+    ResultSet rs = null;
+    koneksi kon = new koneksi();
+    rs = kon.stmt.executeQuery("select * from menu where kdmenu='" + kodemenu + "'");
+    if (rs.next()) {
+        kodemenu = rs.getString(1);
+        namamenu = rs.getString(2);
+        kodekategori = rs.getString(3);
+        harga = rs.getString(4);
+        stok = rs.getString(5);
+    }
+
+              out.write("\n");
+              out.write("\n");
+              out.write("<!DOCTYPE html>\n");
+              out.write("<html>\n");
+              out.write("    <head>\n");
+              out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+              out.write("        <title>Ubah Data Mater Menu</title>\n");
+              out.write("    </head>\n");
+              out.write("    <body>\n");
+              out.write("        <form action=\"ServletMenu\" method=\"POST\">\n");
+              out.write("            <table>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td colspan=\"3\">Ubah Data Menu</td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Kode Menu</td>\n");
+              out.write("                    <td>:</td>\n");
+              out.write("                    <td><input type=\"text\" value=\"");
+              out.print(kodemenu);
+              out.write("\" readonly>\n");
+              out.write("                    <td><input type=\"hidden\" value=\"");
+              out.print(kodemenu);
+              out.write("\" name=\"kdmenu\">\n");
+              out.write("                    </td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Nama Menu</td>\n");
+              out.write("                    <td>:</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"nmmenu\" value=\"");
+              out.print(namamenu);
+              out.write("\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Kode Kategori</td>\n");
+              out.write("                    <td>:</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"kodekategori\" value=\"");
+              out.print(kodekategori);
+              out.write("\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Harga</td>\n");
+              out.write("                    <td>:</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"harga\" value=\"");
+              out.print(harga);
+              out.write("\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Stok</td>\n");
+              out.write("                    <td>:</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"stok\" value=\"");
+              out.print(stok);
+              out.write("\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td colspan=\"3\">\n");
+              out.write("                        <input type=\"submit\" name=\"aksi\" value=\"Update\"> <input type=\"submit\" name=\"aksi\" value=\"Delete\">  <a href=\"beranda.jsp?halaman=menu\">[Lihat Data]</a>\n");
+              out.write("                    </td>\n");
+              out.write("                </tr>\n");
+              out.write("            </table>            \n");
+              out.write("        </form>\n");
+              out.write("    </body>\n");
+              out.write("</html>\n");
+              out.write("\n");
+              out.write("            ");
+              int evalDoAfterBody = _jspx_th_c_when_5.doAfterBody();
+              if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                break;
+            } while (true);
+          }
+          if (_jspx_th_c_when_5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_5);
+            return;
+          }
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_5);
+          out.write("\n");
+          out.write("            ");
+          //  c:when
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_6 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_6.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_6.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='supplier'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_6 = _jspx_th_c_when_6.doStartTag();
+          if (_jspx_eval_c_when_6 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+            do {
+              out.write("\n");
+              out.write("                ");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("<!DOCTYPE html>\n");
+              out.write("<html>\n");
+              out.write("    <head>\n");
+              out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+              out.write("        <title>Supplier Mamma Masak</title>\n");
+              out.write("    </head>\n");
+              out.write("    <body>\n");
+              out.write("        <form method=\"POST\" action=\"SuppServlet\">\n");
+              out.write("            <h1>Tambah Data Supplier</h1>\n");
+              out.write("            <table>\n");
+              out.write("                <tr><div>\n");
+              out.write("                    \n");
+              out.write("                </div>\n");
+              out.write("                    <td><label for=\"inputEmail3\">Kode Supplier</label></td>\n");
+              out.write("                    <div class=\"col-sm-10\">\n");
+              out.write("                        <td>\n");
+              out.write("                            ");
+
+                                try {
+                                    ResultSet rs = null;
+                                    koneksi kon = new koneksi();
+                                    rs = kon.stmt.executeQuery("select max(right(kd_supp,4)) as no from supplier");
+                                    while (rs.next()) {
+                                        if (rs.first() == false) {
+                                            out.println("<input type='text' class='form-control' readonly value='SOOO1' name='kodesupp' >");
+                                        } else {
+                                            rs.last();
+                                            int autonokm = rs.getInt(1) + 1;
+                                            String nomorkm = String.valueOf(autonokm);
+                                            int noLong = nomorkm.length();
+                                            for (int a = 1; a < 5 - noLong; a++) {
+                                                nomorkm = "0" + nomorkm;
+                                            }
+                                            String nomerkm = "S" + nomorkm;
+                                            out.println("<input type='text' class='form_control' readyonly value='" + nomerkm + "' name='kodesupp'>");
+                                        }
+                                    }
+                                } catch (Exception e) {
+                                    out.println(e);
+                                }
+                            
+              out.write("\n");
+              out.write("                        </td>\n");
+              out.write("                    </div>\n");
+              out.write("                </div>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Nama Supplier</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"namasupp\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                        <td>Alamat</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"alamat\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Telepon</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"telp\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>\n");
+              out.write("                        <input type=\"reset\" value=\"Batal\">\n");
+              out.write("                        <input type=\"submit\" value=\"Simpan\" name=\"aksi\">\n");
+              out.write("                    </td>\n");
+              out.write("                </tr>\n");
+              out.write("            </table>\n");
+              out.write("        </form>\n");
+              out.write("                        <br>\n");
+              out.write("        <form action=\"\" method=\"post\">\n");
+              out.write("            Cari Data Bahan : <input type=\"text\" name=\"cari\" value=\"");
+              out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.cari}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+              out.write("\">\n");
+              out.write("            <input type=\"submit\" value=\"Cari\" class=\"button\"><br>\n");
+              out.write("\n");
+              out.write("        </form><br>\n");
+              out.write("\n");
+              out.write("        <table border=\"1\">\n");
+              out.write("            <tr align=\"center\">\n");
+              out.write("                <th>KODE SUPPLIER</th>\n");
+              out.write("                <th>NAMA SUPPLIER</th>\n");
+              out.write("                <th>ALAMAT</th>\n");
+              out.write("                <th>TELEPON</th>\n");
+              out.write("                <th>AKSI</th>\n");
+              out.write("            </tr>\n");
+              out.write("            ");
+
+                String kodesupp = null;
+                String namasupp = null;
+                String alamat = null;
+                String telp = null;
+                ResultSet rs = null;
+
+                koneksi kon = new koneksi();
+
+                rs = kon.stmt.executeQuery("SELECT * FROM supplier ORDER BY kd_supp asc");
+                while (rs.next()) {
+                    kodesupp = rs.getString("kd_supp");
+                    namasupp = rs.getString(2);
+                    alamat = rs.getString(3);
+                    telp = rs.getString(4);
+
+            
+              out.write("\n");
+              out.write("\n");
+              out.write("            <tr>\n");
+              out.write("                <td>");
+ out.println(kodesupp);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(namasupp);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(alamat);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(telp);
+              out.write("</td>\n");
+              out.write("                <td><a href=\"beranda.jsp?halaman=editsupp&kodesupp=");
+ out.println(kodesupp);
+              out.write("\">Lihat Detail</a></td>\n");
+              out.write("            </tr>\n");
+              out.write("            ");
+ } 
+              out.write("\n");
+              out.write("\n");
+              out.write("        </table>\n");
+              out.write("        ");
+ kon.close();
+              out.write("\n");
+              out.write("    </body>\n");
+              out.write("</html>\n");
+              out.write("\n");
+              out.write("            ");
+              int evalDoAfterBody = _jspx_th_c_when_6.doAfterBody();
+              if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                break;
+            } while (true);
+          }
+          if (_jspx_th_c_when_6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_6);
+            return;
+          }
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_6);
+          out.write("\n");
+          out.write("            ");
+          //  c:when
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_7 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_7.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_7.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='editsupp'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_7 = _jspx_th_c_when_7.doStartTag();
+          if (_jspx_eval_c_when_7 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+            do {
+              out.write("\n");
+              out.write("                ");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+
+    String kodesupp = request.getParameter("kodesupp");
+    String namasupp = null;
+    String alamat = null;
+    String telp = null;
+    ResultSet rs = null;
+    koneksi kon = new koneksi();
+    rs = kon.stmt.executeQuery("select * from supplier where kd_supp='" + kodesupp + "'");
+    if (rs.next()) {
+        kodesupp = rs.getString(1);
+        namasupp = rs.getString(2);
+        alamat = rs.getString(3);
+        telp = rs.getString(4);
+    }
+
+              out.write("\n");
+              out.write("<!DOCTYPE html>\n");
+              out.write("<html>\n");
+              out.write("    <head>\n");
+              out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+              out.write("        <title>Ubah Data Mater Supplier</title>\n");
+              out.write("    </head>\n");
+              out.write("    <body>\n");
+              out.write("        <form action=\"SuppServlet\" method=\"POST\">\n");
+              out.write("            <table>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td colspan=\"3\">Ubah Data Supplier</td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Kode Supplier</td>\n");
+              out.write("                    <td>:</td>\n");
+              out.write("                    <td><input type=\"text\" value=\"");
+              out.print(kodesupp);
+              out.write("\" readonly>\n");
+              out.write("                    <td><input type=\"hidden\" value=\"");
+              out.print(kodesupp);
+              out.write("\" name=\"kodesupp\">\n");
+              out.write("                    </td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Nama Supplier</td>\n");
+              out.write("                    <td>:</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"namasupp\" value=\"");
+              out.print(namasupp);
+              out.write("\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Alamat</td>\n");
+              out.write("                    <td>:</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"alamat\" value=\"");
+              out.print(alamat);
+              out.write("\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Telepon</td>\n");
+              out.write("                    <td>:</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"telp\" value=\"");
+              out.print(telp);
+              out.write("\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td colspan=\"3\">\n");
+              out.write("                        <input type=\"submit\" name=\"aksi\" value=\"Update\"> <input type=\"submit\" name=\"aksi\" value=\"Delete\">  <a href=\"beranda.jsp?halaman=supplier\">[Lihat Data]</a>\n");
+              out.write("                    </td>\n");
+              out.write("                </tr>\n");
+              out.write("            </table>            \n");
+              out.write("        </form>\n");
+              out.write("    </body>\n");
+              out.write("</html>\n");
+              out.write("\n");
+              out.write("            ");
+              int evalDoAfterBody = _jspx_th_c_when_7.doAfterBody();
+              if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                break;
+            } while (true);
+          }
+          if (_jspx_th_c_when_7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_7);
+            return;
+          }
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_7);
+          out.write("\n");
+          out.write("            ");
+          //  c:when
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_8 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_8.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_8.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_8.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='user'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_8 = _jspx_th_c_when_8.doStartTag();
+          if (_jspx_eval_c_when_8 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+            do {
+              out.write("\n");
+              out.write("                ");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("<!DOCTYPE html>\n");
+              out.write("<html>\n");
+              out.write("    <head>\n");
+              out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"style/style.css\" />\n");
+              out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+              out.write("        <title>User Mamma Masak</title>\n");
+              out.write("    </head>\n");
+              out.write("    <body>\n");
+              out.write("        <div id=\"content\">\n");
+              out.write("        <form method=\"POST\" action=\"userServlet\">\n");
+              out.write("            <h1>Tambah Data User</h1>\n");
+              out.write("            <table>\n");
+              out.write("                <tr><div>\n");
+              out.write("                    <td><label for=\"inputEmail3\">ID User</label></td>\n");
+              out.write("                    <div class=\"col-sm-10\">\n");
+              out.write("                        <td>\n");
+              out.write("                            ");
+
+                                try {
+                                    ResultSet rs = null;
+                                    koneksi kon = new koneksi();
+                                    rs = kon.stmt.executeQuery("select max(right(id_user,4)) as no from user");
+                                    while (rs.next()) {
+                                        if (rs.first() == false) {
+                                            out.println("<input type='text' class='form-control' readonly value='UOOO1' name='kodeuser' >");
+                                        } else {
+                                            rs.last();
+                                            int autonokm = rs.getInt(1) + 1;
+                                            String nomorkm = String.valueOf(autonokm);
+                                            int noLong = nomorkm.length();
+                                            for (int a = 1; a < 5 - noLong; a++) {
+                                                nomorkm = "0" + nomorkm;
+                                            }
+                                            String nomerkm = "U" + nomorkm;
+                                            out.println("<input type='text' class='form_control' readyonly value='" + nomerkm + "' name='kodeuser'>");
+                                        }
+                                    }
+                                } catch (Exception e) {
+                                    out.println(e);
+                                }
+                            
+              out.write("\n");
+              out.write("                        </td>\n");
+              out.write("                    </div>\n");
+              out.write("                </div>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Nama User</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"namauser\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Hak Akses</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"akses\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>\n");
+              out.write("                        <input type=\"reset\" value=\"Batal\">\n");
+              out.write("                        <input type=\"submit\" value=\"Simpan\" name=\"aksi\">\n");
+              out.write("                    </td>\n");
+              out.write("                </tr>\n");
+              out.write("            </table>\n");
+              out.write("        </form>\n");
+              out.write("        <br>\n");
+              out.write("        <form action=\"\" method=\"post\">\n");
+              out.write("            Cari Data Bahan : <input type=\"text\" name=\"cari\" value=\"");
+              out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.cari}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+              out.write("\">\n");
+              out.write("            <input type=\"submit\" value=\"Cari\" class=\"button\"><br>\n");
+              out.write("\n");
+              out.write("        </form><br>\n");
+              out.write("\n");
+              out.write("        <table border=\"1\">\n");
+              out.write("            <tr align=\"center\">\n");
+              out.write("                <th>ID USER</th>\n");
+              out.write("                <th>NAMA USER</th>\n");
+              out.write("                <th>HAK AKSES</th>\n");
+              out.write("                <th>AKSI</th>\n");
+              out.write("            </tr>\n");
+              out.write("            ");
+
+                String kodeuser = null;
+                String namauser = null;
+                String akses = null;
+                ResultSet rs = null;
+
+                koneksi kon = new koneksi();
+
+                rs = kon.stmt.executeQuery("SELECT * FROM user ORDER BY id_user asc");
+                while (rs.next()) {
+                    kodeuser = rs.getString("id_user");
+                    namauser = rs.getString(2);
+                    akses = rs.getString(3);
+            
+              out.write("\n");
+              out.write("\n");
+              out.write("            <tr>\n");
+              out.write("                <td>");
+ out.println(kodeuser);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(namauser);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(akses);
+              out.write("</td>\n");
+              out.write("                <td><a href=\"beranda.jsp?halaman=edituser&kodeuser=");
+ out.println(kodeuser);
+              out.write("\">Lihat Detail</a></td>\n");
+              out.write("            </tr>\n");
+              out.write("            ");
+ } 
+              out.write("\n");
+              out.write("\n");
+              out.write("        </table>\n");
+              out.write("        ");
+ kon.close();
+              out.write("\n");
+              out.write("        </div>\n");
+              out.write("    </body>\n");
+              out.write("</html>\n");
+              out.write("\n");
+              out.write("            ");
+              int evalDoAfterBody = _jspx_th_c_when_8.doAfterBody();
+              if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                break;
+            } while (true);
+          }
+          if (_jspx_th_c_when_8.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_8);
+            return;
+          }
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_8);
+          out.write("\n");
+          out.write("            ");
+          //  c:when
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_9 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_9.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_9.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_9.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='edituser'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_9 = _jspx_th_c_when_9.doStartTag();
+          if (_jspx_eval_c_when_9 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+            do {
+              out.write("\n");
+              out.write("                ");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+
+    String kodeuser = request.getParameter("kodeuser");
+    String namauser = null;
+    String akses = null;
+    ResultSet rs = null;
+    koneksi kon = new koneksi();
+    rs = kon.stmt.executeQuery("select * from user where id_user='" + kodeuser + "'");
+    if (rs.next()) {
+        kodeuser = rs.getString(1);
+        namauser = rs.getString(2);
+        akses = rs.getString(3);
+    }
+
+              out.write("\n");
+              out.write("\n");
+              out.write("<!DOCTYPE html>\n");
+              out.write("<html>\n");
+              out.write("    <head>\n");
+              out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"style/style.css\" />\n");
+              out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+              out.write("        <title>Ubah Data Master User</title>\n");
+              out.write("    </head>\n");
+              out.write("    <body>\n");
+              out.write("        <form action=\"userServlet\" method=\"POST\">\n");
+              out.write("            <table>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td colspan=\"3\">Ubah Data User</td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>ID user</td>\n");
+              out.write("                    <td>:</td>\n");
+              out.write("                    <td><input type=\"text\" value=\"");
+              out.print(kodeuser);
+              out.write("\" readonly>\n");
+              out.write("                    <td><input type=\"hidden\" value=\"");
+              out.print(kodeuser);
+              out.write("\" name=\"kodeuser\">\n");
+              out.write("                    </td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Nama User</td>\n");
+              out.write("                    <td>:</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"namauser\" value=\"");
+              out.print(namauser);
+              out.write("\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Hak Akses</td>\n");
+              out.write("                    <td>:</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"akses\" value=\"");
+              out.print(akses);
+              out.write("\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td colspan=\"3\">\n");
+              out.write("                        <input type=\"submit\" name=\"aksi\" value=\"Update\"> <input type=\"submit\" name=\"aksi\" value=\"Delete\">  <a href=\"beranda.jsp?halaman=user\">[Lihat Data]</a>\n");
+              out.write("                    </td>\n");
+              out.write("                </tr>\n");
+              out.write("            </table>            \n");
+              out.write("        </form>\n");
+              out.write("    </body>\n");
+              out.write("</html>\n");
+              out.write("\n");
+              out.write("            ");
+              int evalDoAfterBody = _jspx_th_c_when_9.doAfterBody();
+              if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                break;
+            } while (true);
+          }
+          if (_jspx_th_c_when_9.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_9);
+            return;
+          }
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_9);
+          out.write("\n");
+          out.write("            ");
+          if (_jspx_meth_c_otherwise_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
+            return;
+          out.write("\n");
+          out.write("        ");
+          int evalDoAfterBody = _jspx_th_c_choose_0.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_choose_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        _jspx_tagPool_c_choose.reuse(_jspx_th_c_choose_0);
+        return;
+      }
+      _jspx_tagPool_c_choose.reuse(_jspx_th_c_choose_0);
       out.write("\n");
-      out.write("    <hr>\n");
-      out.write("\n");
-      out.write("\t\t<section class=\"ftco-section ftco-partner\">\n");
-      out.write("    \t<div class=\"container\">\n");
-      out.write("    \t\t<div class=\"row\">\n");
-      out.write("    \t\t\t<div class=\"col-sm ftco-animate\">\n");
-      out.write("    \t\t\t\t<a href=\"#\" class=\"partner\"><img src=\"images/partner-1.png\" class=\"img-fluid\" alt=\"Colorlib Template\"></a>\n");
-      out.write("    \t\t\t</div>\n");
-      out.write("    \t\t\t<div class=\"col-sm ftco-animate\">\n");
-      out.write("    \t\t\t\t<a href=\"#\" class=\"partner\"><img src=\"images/partner-2.png\" class=\"img-fluid\" alt=\"Colorlib Template\"></a>\n");
-      out.write("    \t\t\t</div>\n");
-      out.write("    \t\t\t<div class=\"col-sm ftco-animate\">\n");
-      out.write("    \t\t\t\t<a href=\"#\" class=\"partner\"><img src=\"images/partner-3.png\" class=\"img-fluid\" alt=\"Colorlib Template\"></a>\n");
-      out.write("    \t\t\t</div>\n");
-      out.write("    \t\t\t<div class=\"col-sm ftco-animate\">\n");
-      out.write("    \t\t\t\t<a href=\"#\" class=\"partner\"><img src=\"images/partner-4.png\" class=\"img-fluid\" alt=\"Colorlib Template\"></a>\n");
-      out.write("    \t\t\t</div>\n");
-      out.write("    \t\t\t<div class=\"col-sm ftco-animate\">\n");
-      out.write("    \t\t\t\t<a href=\"#\" class=\"partner\"><img src=\"images/partner-5.png\" class=\"img-fluid\" alt=\"Colorlib Template\"></a>\n");
-      out.write("    \t\t\t</div>\n");
-      out.write("    \t\t</div>\n");
-      out.write("    \t</div>\n");
-      out.write("    </section>\n");
-      out.write("\n");
-      out.write("\t\t<section class=\"ftco-section ftco-no-pt ftco-no-pb py-5 bg-light\">\n");
-      out.write("      <div class=\"container py-4\">\n");
-      out.write("        <div class=\"row d-flex justify-content-center py-5\">\n");
-      out.write("          <div class=\"col-md-6\">\n");
-      out.write("          \t<h2 style=\"font-size: 22px;\" class=\"mb-0\">Subcribe to our Newsletter</h2>\n");
-      out.write("          \t<span>Get e-mail updates about our latest shops and special offers</span>\n");
-      out.write("          </div>\n");
-      out.write("          <div class=\"col-md-6 d-flex align-items-center\">\n");
-      out.write("            <form action=\"#\" class=\"subscribe-form\">\n");
-      out.write("              <div class=\"form-group d-flex\">\n");
-      out.write("                <input type=\"text\" class=\"form-control\" placeholder=\"Enter email address\">\n");
-      out.write("                <input type=\"submit\" value=\"Subscribe\" class=\"submit px-3\">\n");
-      out.write("              </div>\n");
-      out.write("            </form>\n");
-      out.write("          </div>\n");
-      out.write("        </div>\n");
+      out.write("        \n");
       out.write("      </div>\n");
-      out.write("    </section>\n");
-      out.write("    <footer class=\"ftco-footer ftco-section\">\n");
-      out.write("      <div class=\"container\">\n");
-      out.write("      \t<div class=\"row\">\n");
-      out.write("      \t\t<div class=\"mouse\">\n");
-      out.write("\t\t\t\t\t\t<a href=\"#\" class=\"mouse-icon\">\n");
-      out.write("\t\t\t\t\t\t\t<div class=\"mouse-wheel\"><span class=\"ion-ios-arrow-up\"></span></div>\n");
-      out.write("\t\t\t\t\t\t</a>\n");
-      out.write("\t\t\t\t\t</div>\n");
-      out.write("      \t</div>\n");
-      out.write("        <div class=\"row mb-5\">\n");
-      out.write("          <div class=\"col-md\">\n");
-      out.write("            <div class=\"ftco-footer-widget mb-4\">\n");
-      out.write("              <h2 class=\"ftco-heading-2\">Vegefoods</h2>\n");
-      out.write("              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>\n");
-      out.write("              <ul class=\"ftco-footer-social list-unstyled float-md-left float-lft mt-5\">\n");
-      out.write("                <li class=\"ftco-animate\"><a href=\"#\"><span class=\"icon-twitter\"></span></a></li>\n");
-      out.write("                <li class=\"ftco-animate\"><a href=\"#\"><span class=\"icon-facebook\"></span></a></li>\n");
-      out.write("                <li class=\"ftco-animate\"><a href=\"#\"><span class=\"icon-instagram\"></span></a></li>\n");
-      out.write("              </ul>\n");
-      out.write("            </div>\n");
-      out.write("          </div>\n");
-      out.write("          <div class=\"col-md\">\n");
-      out.write("            <div class=\"ftco-footer-widget mb-4 ml-md-5\">\n");
-      out.write("              <h2 class=\"ftco-heading-2\">Menu</h2>\n");
-      out.write("              <ul class=\"list-unstyled\">\n");
-      out.write("                <li><a href=\"#\" class=\"py-2 d-block\">Shop</a></li>\n");
-      out.write("                <li><a href=\"#\" class=\"py-2 d-block\">About</a></li>\n");
-      out.write("                <li><a href=\"#\" class=\"py-2 d-block\">Journal</a></li>\n");
-      out.write("                <li><a href=\"#\" class=\"py-2 d-block\">Contact Us</a></li>\n");
-      out.write("              </ul>\n");
-      out.write("            </div>\n");
-      out.write("          </div>\n");
-      out.write("          <div class=\"col-md-4\">\n");
-      out.write("             <div class=\"ftco-footer-widget mb-4\">\n");
-      out.write("              <h2 class=\"ftco-heading-2\">Help</h2>\n");
-      out.write("              <div class=\"d-flex\">\n");
-      out.write("\t              <ul class=\"list-unstyled mr-l-5 pr-l-3 mr-4\">\n");
-      out.write("\t                <li><a href=\"#\" class=\"py-2 d-block\">Shipping Information</a></li>\n");
-      out.write("\t                <li><a href=\"#\" class=\"py-2 d-block\">Returns &amp; Exchange</a></li>\n");
-      out.write("\t                <li><a href=\"#\" class=\"py-2 d-block\">Terms &amp; Conditions</a></li>\n");
-      out.write("\t                <li><a href=\"#\" class=\"py-2 d-block\">Privacy Policy</a></li>\n");
-      out.write("\t              </ul>\n");
-      out.write("\t              <ul class=\"list-unstyled\">\n");
-      out.write("\t                <li><a href=\"#\" class=\"py-2 d-block\">FAQs</a></li>\n");
-      out.write("\t                <li><a href=\"#\" class=\"py-2 d-block\">Contact</a></li>\n");
-      out.write("\t              </ul>\n");
-      out.write("\t            </div>\n");
-      out.write("            </div>\n");
-      out.write("          </div>\n");
-      out.write("          <div class=\"col-md\">\n");
-      out.write("            <div class=\"ftco-footer-widget mb-4\">\n");
-      out.write("            \t<h2 class=\"ftco-heading-2\">Have a Questions?</h2>\n");
-      out.write("            \t<div class=\"block-23 mb-3\">\n");
-      out.write("\t              <ul>\n");
-      out.write("\t                <li><span class=\"icon icon-map-marker\"></span><span class=\"text\">203 Fake St. Mountain View, San Francisco, California, USA</span></li>\n");
-      out.write("\t                <li><a href=\"#\"><span class=\"icon icon-phone\"></span><span class=\"text\">+2 392 3929 210</span></a></li>\n");
-      out.write("\t                <li><a href=\"#\"><span class=\"icon icon-envelope\"></span><span class=\"text\">info@yourdomain.com</span></a></li>\n");
-      out.write("\t              </ul>\n");
-      out.write("\t            </div>\n");
-      out.write("            </div>\n");
-      out.write("          </div>\n");
-      out.write("        </div>\n");
-      out.write("        <div class=\"row\">\n");
-      out.write("          <div class=\"col-md-12 text-center\">\n");
-      out.write("\n");
-      out.write("            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->\n");
-      out.write("\t\t\t\t\t\t  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class=\"icon-heart color-danger\" aria-hidden=\"true\"></i> by <a href=\"https://colorlib.com\" target=\"_blank\">Colorlib</a>\n");
-      out.write("\t\t\t\t\t\t  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->\n");
-      out.write("\t\t\t\t\t\t</p>\n");
-      out.write("          </div>\n");
-      out.write("        </div>\n");
-      out.write("      </div>\n");
-      out.write("    </footer>\n");
-      out.write("    \n");
-      out.write("  \n");
-      out.write("\n");
-      out.write("  <!-- loader -->\n");
-      out.write("  <div id=\"ftco-loader\" class=\"show fullscreen\"><svg class=\"circular\" width=\"48px\" height=\"48px\"><circle class=\"path-bg\" cx=\"24\" cy=\"24\" r=\"22\" fill=\"none\" stroke-width=\"4\" stroke=\"#eeeeee\"/><circle class=\"path\" cx=\"24\" cy=\"24\" r=\"22\" fill=\"none\" stroke-width=\"4\" stroke-miterlimit=\"10\" stroke=\"#F96D00\"/></svg></div>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("  <script src=\"js/jquery.min.js\"></script>\n");
-      out.write("  <script src=\"js/jquery-migrate-3.0.1.min.js\"></script>\n");
-      out.write("  <script src=\"js/popper.min.js\"></script>\n");
-      out.write("  <script src=\"js/bootstrap.min.js\"></script>\n");
-      out.write("  <script src=\"js/jquery.easing.1.3.js\"></script>\n");
-      out.write("  <script src=\"js/jquery.waypoints.min.js\"></script>\n");
-      out.write("  <script src=\"js/jquery.stellar.min.js\"></script>\n");
-      out.write("  <script src=\"js/owl.carousel.min.js\"></script>\n");
-      out.write("  <script src=\"js/jquery.magnific-popup.min.js\"></script>\n");
-      out.write("  <script src=\"js/aos.js\"></script>\n");
-      out.write("  <script src=\"js/jquery.animateNumber.min.js\"></script>\n");
-      out.write("  <script src=\"js/bootstrap-datepicker.js\"></script>\n");
-      out.write("  <script src=\"js/scrollax.min.js\"></script>\n");
-      out.write("  <script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false\"></script>\n");
-      out.write("  <script src=\"js/google-map.js\"></script>\n");
-      out.write("  <script src=\"js/main.js\"></script>\n");
-      out.write("    \n");
-      out.write("  </body>\n");
+      out.write("    </div>\n");
+      out.write("    <div id=\"content_footer\"></div>\n");
+      out.write("    <div id=\"footer\">\n");
+      out.write("      <p><a href=\"index.html\">Home</a> | <a href=\"examples.html\">Examples</a> | <a href=\"page.html\">A Page</a> | <a href=\"another_page.html\">Another Page</a> | <a href=\"contact.html\">Contact Us</a></p>\n");
+      out.write("      <p>Copyright &copy; simplestyle_blue_trees | <a href=\"http://validator.w3.org/check?uri=referer\">HTML5</a> | <a href=\"http://jigsaw.w3.org/css-validator/check/referer\">CSS</a> | <a href=\"http://www.html5webtemplates.co.uk\">design from HTML5webtemplates.co.uk</a></p>\n");
+      out.write("    </div>\n");
+      out.write("  </div>\n");
+      out.write("</body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
@@ -762,5 +1427,110 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
     } finally {
       _jspxFactory.releasePageContext(_jspx_page_context);
     }
+  }
+
+  private boolean _jspx_meth_c_when_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_choose_0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:when
+    org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_0 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+    _jspx_th_c_when_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_when_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+    _jspx_th_c_when_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='home'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_when_0 = _jspx_th_c_when_0.doStartTag();
+    if (_jspx_eval_c_when_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                ");
+        out.write("\n");
+        out.write("\n");
+        out.write("\n");
+        out.write("<!DOCTYPE html>\n");
+        out.write("<html>\n");
+        out.write("    <head>\n");
+        out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+        out.write("        <title>Restauran Mamma Masak</title>\n");
+        out.write("    </head>\n");
+        out.write("    <body>\n");
+        out.write("        <h1>Welcome to the simplestyle_blue_trees template</h1>\n");
+        out.write("        <p>This standards compliant, simple, fixed width website template is released as an 'open source' design (under a <a href=\"http://creativecommons.org/licenses/by/3.0\">Creative Commons Attribution 3.0 Licence</a>), which means that you are free to download and use it for anything you want (including modifying and amending it). All I ask is that you leave the 'design from HTML5webtemplates.co.uk' link in the footer of the template, but other than that...</p>\n");
+        out.write("        <p>This template is written entirely in <strong>HTML5</strong> and <strong>CSS</strong>, and can be validated using the links in the footer.</p>\n");
+        out.write("        <p>You can view more free HTML5 web templates <a href=\"http://www.html5webtemplates.co.uk\">here</a>.</p>\n");
+        out.write("        <p>This template is a fully functional 5 page website, with an <a href=\"examples.html\">examples</a> page that gives examples of all the styles available with this design.</p>\n");
+        out.write("        <h2>Browser Compatibility</h2>\n");
+        out.write("        <p>This template has been tested in the following browsers:</p>\n");
+        out.write("        <ul>\n");
+        out.write("          <li>Internet Explorer 9</li>\n");
+        out.write("          <li>FireFox 25</li>\n");
+        out.write("          <li>Google Chrome 31</li>\n");
+        out.write("        </ul>\n");
+        out.write("    </body>\n");
+        out.write("</html>\n");
+        out.write("\n");
+        out.write("            ");
+        int evalDoAfterBody = _jspx_th_c_when_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_when_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_0);
+      return true;
+    }
+    _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_otherwise_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_choose_0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:otherwise
+    org.apache.taglibs.standard.tag.common.core.OtherwiseTag _jspx_th_c_otherwise_0 = (org.apache.taglibs.standard.tag.common.core.OtherwiseTag) _jspx_tagPool_c_otherwise.get(org.apache.taglibs.standard.tag.common.core.OtherwiseTag.class);
+    _jspx_th_c_otherwise_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_otherwise_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+    int _jspx_eval_c_otherwise_0 = _jspx_th_c_otherwise_0.doStartTag();
+    if (_jspx_eval_c_otherwise_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                ");
+        out.write("\n");
+        out.write("\n");
+        out.write("\n");
+        out.write("<!DOCTYPE html>\n");
+        out.write("<html>\n");
+        out.write("    <head>\n");
+        out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+        out.write("        <title>Restauran Mamma Masak</title>\n");
+        out.write("    </head>\n");
+        out.write("    <body>\n");
+        out.write("        <h1>Welcome to the simplestyle_blue_trees template</h1>\n");
+        out.write("        <p>This standards compliant, simple, fixed width website template is released as an 'open source' design (under a <a href=\"http://creativecommons.org/licenses/by/3.0\">Creative Commons Attribution 3.0 Licence</a>), which means that you are free to download and use it for anything you want (including modifying and amending it). All I ask is that you leave the 'design from HTML5webtemplates.co.uk' link in the footer of the template, but other than that...</p>\n");
+        out.write("        <p>This template is written entirely in <strong>HTML5</strong> and <strong>CSS</strong>, and can be validated using the links in the footer.</p>\n");
+        out.write("        <p>You can view more free HTML5 web templates <a href=\"http://www.html5webtemplates.co.uk\">here</a>.</p>\n");
+        out.write("        <p>This template is a fully functional 5 page website, with an <a href=\"examples.html\">examples</a> page that gives examples of all the styles available with this design.</p>\n");
+        out.write("        <h2>Browser Compatibility</h2>\n");
+        out.write("        <p>This template has been tested in the following browsers:</p>\n");
+        out.write("        <ul>\n");
+        out.write("          <li>Internet Explorer 9</li>\n");
+        out.write("          <li>FireFox 25</li>\n");
+        out.write("          <li>Google Chrome 31</li>\n");
+        out.write("        </ul>\n");
+        out.write("    </body>\n");
+        out.write("</html>\n");
+        out.write("\n");
+        out.write("            ");
+        int evalDoAfterBody = _jspx_th_c_otherwise_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_otherwise_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_otherwise.reuse(_jspx_th_c_otherwise_0);
+      return true;
+    }
+    _jspx_tagPool_c_otherwise.reuse(_jspx_th_c_otherwise_0);
+    return false;
   }
 }

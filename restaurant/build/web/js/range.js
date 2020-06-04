@@ -13,16 +13,16 @@
         	slide2 = parseFloat(rangeS[1].value);
 
       if (slide1 > slide2) {
-				[slide1, slide2] = [slide2, slide1];
+          [slide1, slide2] = [slide2, slide1];
         // var tmp = slide2;
         // slide2 = slide1;
         // slide1 = tmp;
-      }
+    }
 
       numberS[0].value = slide1;
       numberS[1].value = slide2;
     }
-  });
+});
 
   numberS.forEach(function(el) {
     el.oninput = function() {
