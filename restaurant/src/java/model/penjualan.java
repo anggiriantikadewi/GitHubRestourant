@@ -13,10 +13,11 @@ public class penjualan {
     private String nojual;
     private String tanggaljual;
     private String totaljual;
-    private Double kodemenu;
-    private Double nmmenu;
-    private Double qtyjual;
-    private Double subtotal;
+    private String kodemenu;
+    private String nmmenu;
+    private String harga;
+    private String qtyjual;
+    private String subtotal;
 
     public String getNojual() {
         return nojual;
@@ -34,6 +35,24 @@ public class penjualan {
         this.tanggaljual = tanggaljual;
     }
 
+
+    public String getKodemenu() {
+        return kodemenu;
+    }
+
+    public void setKodemenu(String kodemenu) {
+        this.kodemenu = kodemenu;
+    }
+
+
+    public String getNmmenu() {
+        return nmmenu;
+    }
+
+    public void setNmmenu(String nmmenu) {
+        this.nmmenu = nmmenu;
+    }
+
     public String getTotaljual() {
         return totaljual;
     }
@@ -42,37 +61,30 @@ public class penjualan {
         this.totaljual = totaljual;
     }
 
-    public Double getKodemenu() {
-        return kodemenu;
+    public String getHarga() {
+        return harga;
     }
 
-    public void setKodemenu(Double kodemenu) {
-        this.kodemenu = kodemenu;
+    public void setHarga(String harga) {
+        this.harga = harga;
     }
 
-    public Double getNmmenu() {
-        return nmmenu;
-    }
-
-    public void setNmmenu(Double nmmenu) {
-        this.nmmenu = nmmenu;
-    }
-
-    public Double getQtyjual() {
+    public String getQtyjual() {
         return qtyjual;
     }
 
-    public void setQtyjual(Double qtyjual) {
+    public void setQtyjual(String qtyjual) {
         this.qtyjual = qtyjual;
     }
 
-    public Double getSubtotal() {
+    public String getSubtotal() {
         return subtotal;
     }
 
-    public void setSubtotal(Double subtotal) {
+    public void setSubtotal(String subtotal) {
         this.subtotal = subtotal;
     }
+
     
     
 }

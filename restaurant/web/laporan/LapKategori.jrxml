@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6b03d971-c7ca-4532-9488-cd4cc08ce602">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="110"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     kategori.`kodekategori` AS kategori_kodekategori,
+     kategori.`namakategori` AS kategori_namakategori
+FROM
+     `kategori` kategori]]>
+	</queryString>
+	<field name="kategori_kodekategori" class="java.lang.String"/>
+	<field name="kategori_namakategori" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="128" splitType="Stretch">
+			<staticText>
+				<reportElement x="233" y="49" width="377" height="66" uuid="d9037f98-3048-45a1-a245-d8403f039736"/>
+				<textElement>
+					<font fontName="Forte" size="34" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN KATEGORI]]></text>
+			</staticText>
+			<image>
+				<reportElement x="20" y="20" width="203" height="108" uuid="2c304dcf-9541-4cc6-a0bc-42ef37703e19"/>
+				<imageExpression><![CDATA["D:\\UBSI ARD\\UBSI SEMESTER 4\\PEMPROGRAMAN AK II\\restaurant\\IMG_20200627_204336.JPG"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="702" y="0" width="100" height="20" uuid="82db4c2d-a0fd-43bf-a926-4744c81557c2"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="27" splitType="Stretch">
+			<textField pattern="yyyy.MMMMM.dd GGG hh:mm aaa">
+				<reportElement x="33" y="0" width="242" height="17" uuid="1adc757d-d3a8-4654-94bb-c7bcccd4360f"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="88" y="0" width="210" height="20" uuid="2bcb91ba-b540-4935-8ca7-c08d6c358987"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[KODE KATEGORI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="0" width="210" height="20" uuid="3d7da903-6b4d-47ad-aecb-ed4e47eba924"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA KATEGORI]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="88" y="0" width="210" height="20" uuid="8f5288cd-86cd-4808-8089-84abe647a5af"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<paragraph firstLineIndent="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kategori_kodekategori}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="0" width="210" height="20" uuid="3f1b62de-5ab1-457b-a0c0-d81e5117cc2c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<paragraph firstLineIndent="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kategori_namakategori}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

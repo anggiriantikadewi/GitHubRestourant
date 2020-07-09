@@ -5,6 +5,17 @@ import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import control.koneksi;
 import java.sql.ResultSet;
+import model.supplier;
+import model.pembelian;
+import control.koneksi;
+import java.sql.ResultSet;
+import model.menu;
+import model.supplier;
+import model.pembelian;
+import control.koneksi;
+import java.sql.ResultSet;
+import model.menu;
+import model.penjualan;
 import control.koneksi;
 import java.sql.*;
 import control.koneksi;
@@ -26,14 +37,19 @@ import java.sql.*;
 public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
+
+                int subqty = 0, sub = 0;
+            
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
 
   static {
-    _jspx_dependants = new java.util.ArrayList<String>(9);
+    _jspx_dependants = new java.util.ArrayList<String>(13);
     _jspx_dependants.add("/home.jsp");
     _jspx_dependants.add("/bahan.jsp");
+    _jspx_dependants.add("/pembelian.jsp");
+    _jspx_dependants.add("/penjualan.jsp");
     _jspx_dependants.add("/editbahan.jsp");
     _jspx_dependants.add("/menu.jsp");
     _jspx_dependants.add("/editmenu.jsp");
@@ -41,6 +57,8 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_dependants.add("/editsupplier.jsp");
     _jspx_dependants.add("/user.jsp");
     _jspx_dependants.add("/edituser.jsp");
+    _jspx_dependants.add("/CetakLaporanBahan.jsp");
+    _jspx_dependants.add("/CetakLapMenu.jsp");
   }
 
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_choose;
@@ -108,7 +126,7 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div id=\"logo_text\">\n");
       out.write("          <!-- class=\"logo_colour\", allows you to change the colour of the text -->\n");
       out.write("          <h1><a href=\"beranda.jsp\">Restauran<span class=\"logo_colour\">Mamma Masak</span></a></h1>\n");
-      out.write("          <h2>Food. Drinks. Snack.</h2>\n");
+      out.write("          <h2>Makanan Minuman Enakkkkk!</h2>\n");
       out.write("        </div>\n");
       out.write("      </div>\n");
       out.write("      <div id=\"menubar\">\n");
@@ -119,7 +137,8 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("          <li><a href=\"beranda.jsp?halaman=bahan\">Bahan</a></li>\n");
       out.write("          <li><a href=\"beranda.jsp?halaman=supplier\">Supplier</a></li>\n");
       out.write("          <li><a href=\"beranda.jsp?halaman=user\">User</a></li>\n");
-      out.write("          <li><a href=\"contact.html\">Contact Us</a></li>\n");
+      out.write("          <li><a href=\"beranda.jsp?halaman=pembelian\">Pembelian</a></li>\n");
+      out.write("          <li><a href=\"beranda.jsp?halaman=penjualan\">Penjualan</a></li>\n");
       out.write("        </ul>\n");
       out.write("      </div>\n");
       out.write("    </div>\n");
@@ -132,9 +151,9 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("          <div class=\"sidebar_item\">\n");
       out.write("            <!-- insert your sidebar items here -->\n");
       out.write("            <h3>Latest News</h3>\n");
-      out.write("            <h4>New Website Launched</h4>\n");
-      out.write("            <h5>February 1st, 2014</h5>\n");
-      out.write("            <p>2014 sees the redesign of our website. Take a look around and let us know what you think.<br /><a href=\"#\">Read more</a></p>\n");
+      out.write("            <h4>RESTAURANT MAMMA MASAK</h4>\n");
+      out.write("            <h5>February 1st, 2010</h5>\n");
+      out.write("            <p>Mamma Masak adalah perusahaan yang bergerak dibidang penjualan makanan dan minuman. Berdiri sejak tahun 2010 dan didirikan oleh Ibu Marwah Rianti dengan memiliki 6 karyawan dengan bagian masing masing. .<br /><a href=\"#\">Read more</a></p>\n");
       out.write("          </div>\n");
       out.write("          <div class=\"sidebar_base\"></div>\n");
       out.write("        </div>\n");
@@ -143,7 +162,8 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("          <div class=\"sidebar_item\">\n");
       out.write("            <h3>Useful Links</h3>\n");
       out.write("            <ul>\n");
-      out.write("              <li><a href=\"#\">link 1</a></li>\n");
+      out.write("              <li><a href=\"beranda.jsp?halaman=lapbahan\">Laporan Bahan</a></li>\n");
+      out.write("              <li><a href=\"beranda.jsp?halaman=lapmenu\">Laporan Menu</a></li>\n");
       out.write("              <li><a href=\"#\">link 2</a></li>\n");
       out.write("              <li><a href=\"#\">link 3</a></li>\n");
       out.write("              <li><a href=\"#\">link 4</a></li>\n");
@@ -345,9 +365,647 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
           org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_2 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
           _jspx_th_c_when_2.setPageContext(_jspx_page_context);
           _jspx_th_c_when_2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
-          _jspx_th_c_when_2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='editbahan'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          _jspx_th_c_when_2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='pembelian'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
           int _jspx_eval_c_when_2 = _jspx_th_c_when_2.doStartTag();
           if (_jspx_eval_c_when_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+            do {
+              out.write("\n");
+              out.write("                ");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+
+    pembelian pemesanan=new pembelian();
+    menu menu=new menu();
+    supplier supplier=new supplier();
+    koneksi kon= new koneksi();
+    ResultSet rs=null;
+    ResultSet qrymenu=null;
+    ResultSet qrypembelian=null;
+
+              out.write("\n");
+              out.write("\n");
+              out.write("<script type=\"text/javascript\">\n");
+              out.write("    function showEmp(emp_value)\n");
+              out.write("    {\n");
+              out.write("        if (document.getElementById(\"emp_id\").value != \"-1\")\n");
+              out.write("        {\n");
+              out.write("            xmlHttp = GetXmlHttpObject()\n");
+              out.write("            if (xmlHttp == null)\n");
+              out.write("            {\n");
+              out.write("                alert(\"Browser does not support HTTP Request\")\n");
+              out.write("                return\n");
+              out.write("            }\n");
+              out.write("            var url = \"getmenu.jsp\"\n");
+              out.write("            url = url + \"?emp_id=\" + emp_value\n");
+              out.write("\n");
+              out.write("            xmlHttp.onreadystatechange = stateChanged\n");
+              out.write("            xmlHttp.open(\"GET\", url, true)\n");
+              out.write("            xmlHttp.send(null)\n");
+              out.write("        } else\n");
+              out.write("        {\n");
+              out.write("            alert(\"Pilih Kode Menu\");\n");
+              out.write("        }\n");
+              out.write("    }\n");
+              out.write("\n");
+              out.write("    function stateChanged()\n");
+              out.write("    {\n");
+              out.write("        document.getElementById(\"ename\").value = \"\";\n");
+              out.write("        document.getElementById(\"emp_id\").value = \"\";\n");
+              out.write("        if (xmlHttp.readyState == 4 || xmlHttp.readyState == \"complete\")\n");
+              out.write("        {\n");
+              out.write("\n");
+              out.write("            var showdata = xmlHttp.responseText;\n");
+              out.write("            var strar = showdata.split(\":\");\n");
+              out.write("\n");
+              out.write("            if (strar.length == 1)\n");
+              out.write("            {\n");
+              out.write("                document.getElementById(\"emp_id\").focus();\n");
+              out.write("                alert(\"Pilih Kode Menu\");\n");
+              out.write("                document.getElementById(\"ename\").value = \" \";\n");
+              out.write("                document.getElementById(\"emp_id\").value = \" \";\n");
+              out.write("            } else if (strar.length > 1)\n");
+              out.write("            {\n");
+              out.write("                document.getElementById(\"ename\").value = strar[1];\n");
+              out.write("            }\n");
+              out.write("\n");
+              out.write("        }\n");
+              out.write("    }\n");
+              out.write("\n");
+              out.write("    function GetXmlHttpObject()\n");
+              out.write("    {\n");
+              out.write("        var xmlHttp = null;\n");
+              out.write("        try\n");
+              out.write("        {\n");
+              out.write("            xmlHttp = new XMLHttpRequest();\n");
+              out.write("        } catch (e)\n");
+              out.write("        {\n");
+              out.write("            try\n");
+              out.write("            {\n");
+              out.write("                xmlHttp = new ActiveXObject(\"Msxml2.XMLHTTP\");\n");
+              out.write("            } catch (e)\n");
+              out.write("            {\n");
+              out.write("                xmlHttp = new ActiveXObject(\"Microsoft.XMLHTTP\");\n");
+              out.write("            }\n");
+              out.write("        }\n");
+              out.write("        return xmlHttp;\n");
+              out.write("    }\n");
+              out.write("</script>\n");
+              out.write("\n");
+              out.write("<!DOCTYPE html>\n");
+              out.write("<html>\n");
+              out.write("    <head>\n");
+              out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+              out.write("        <title>Pembelian Mamma Masak</title>\n");
+              out.write("    </head>\n");
+              out.write("    <body>\n");
+              out.write("        <form method=\"POST\" action=\"ServletPembelian\">\n");
+              out.write("            <h1>Tambah Data Pembelian</h1>\n");
+              out.write("            <table>\n");
+              out.write("                <tr><div>\n");
+              out.write("                    <td><label for=\"inputEmail3\">No Pembelian</label></td>\n");
+              out.write("                    <div class=\"col-sm-10\">\n");
+              out.write("                        <td>\n");
+              out.write("                            ");
+
+                                try {
+                                    
+                                    rs = kon.stmt.executeQuery("select max(right(no_beli,4)) as no from pembelian");
+                                    while (rs.next()) {
+                                        if (rs.first() == false) {
+                                            out.println("<input type='text' class='form-control' readonly value='POOO1' name='no_beli' >");
+                                        } else {
+                                            rs.last();
+                                            int autonokm = rs.getInt(1) + 1;
+                                            String nomorkm = String.valueOf(autonokm);
+                                            int noLong = nomorkm.length();
+                                            for (int a = 1; a < 5 - noLong; a++) {
+                                                nomorkm = "0" + nomorkm;
+                                            }
+                                            String nomerkm = "P" + nomorkm;
+                                            out.println("<input type='text' class='form_control' readyonly value='" + nomerkm + "' name='no_beli'>");
+                                        }
+                                    }
+                                } catch (Exception e) {
+                                    out.println(e);
+                                }
+                            
+              out.write("\n");
+              out.write("                        </td>\n");
+              out.write("                    </div>\n");
+              out.write("                </div>\n");
+              out.write("                </tr>\n");
+              out.write("                ");
+
+                    java.util.Date waktu = new java.util.Date();
+                    int tanggal = waktu.getDate();
+                    int tahun = waktu.getYear() + 1900;
+                    int bulan = waktu.getMonth() + 1;
+                    String tgl = tanggal + "-" + bulan + "-" + tahun;
+
+                
+              out.write("\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Tanggal Pembelian</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"tgl_beli\" value=\"");
+              out.print(tgl);
+              out.write("\"</td>\n");
+              out.write("                </tr>\n");
+              out.write("               \n");
+              out.write("                <tr>\n");
+              out.write("                        <td>Pilih Kode Menu</td>\n");
+              out.write("                    <td><select name=\"semp_id\" onchange=\"showEmp(this.value);\">\n");
+              out.write("                            <option value=\"-1\">Select</option> \n");
+              out.write("                    ");
+
+                        rs = kon.stmt.executeQuery("SELECT * from menu");
+                        while (rs.next()) {
+                            menu.setKodemenu(rs.getString("kdmenu"));
+                            menu.setNamamenu(rs.getString("nmmenu"));
+                    
+              out.write("\n");
+              out.write("                            <option value=\"");
+              out.print(menu.getKodemenu());
+              out.write('"');
+              out.write('>');
+              out.print(menu.getKodemenu());
+              out.write(" || ");
+              out.print(menu.getNamamenu());
+              out.write("</option>\n");
+              out.write("                    ");
+  } 
+              out.write("\n");
+              out.write("                        </select></td>\n");
+              out.write("                        <input  type=\"hidden\" name=\"emp_id\" id=\"emp_id\" value=\"\">\n");
+              out.write("                        \n");
+              out.write("                        \n");
+              out.write("                </tr>\n");
+              out.write("                \n");
+              out.write("                <tr>\n");
+              out.write("                \n");
+              out.write("                    <td>Harga</td>\n");
+              out.write("                    <td><input type=\"text\" readonly name=\"emp_name\" id=\"ename\" value=\"\" onkeyup=\"sum();\"</td>\n");
+              out.write("                    \n");
+              out.write("                </tr>\n");
+              out.write("                \n");
+              out.write("                <tr>\n");
+              out.write("                    <td>QTY</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"qty_beli\" id=\"jml\" onkeyup=\"sum();\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Subtotal</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"sub_beli\" id=\"subtotal\" readonly=\"readonly\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Kode Supplier</td>\n");
+              out.write("                    <td><select name=\"kd_supp\">\n");
+              out.write("                                    <option value=\"-1\">Pilih Supplier</option>\n");
+              out.write("                                    ");
+
+                                        rs=kon.stmt.executeQuery("select * from supplier");
+                                        while(rs.next()){
+                                            supplier.setKodesupp(rs.getString("kd_supp"));
+                                            supplier.setNamasupp(rs.getString("nm_supp"));
+                                        
+                                    
+              out.write("\n");
+              out.write("                                    <option value=\"");
+              out.print(supplier.getKodesupp());
+              out.write('"');
+              out.write('>');
+              out.print(supplier.getKodesupp());
+              out.write(" || ");
+              out.print(supplier.getNamasupp());
+              out.write("</option>\n");
+              out.write("                                    ");
+ } 
+              out.write("\n");
+              out.write("                        </select></td>\n");
+              out.write("                        \n");
+              out.write("                </tr>\n");
+              out.write("                <script type=\"text/javascript\">\n");
+              out.write("                    function sum(){\n");
+              out.write("                        var txtFirstNumberValue = document.getElementById('ename').value;\n");
+              out.write("                        var txtSecondNumberValue = document.getElementById('jml').value;\n");
+              out.write("                        var result = parseFloat(txtFirstNumberValue) * parseFloat(txtSecondNumberValue);\n");
+              out.write("                        if(!isNaN(result)){\n");
+              out.write("                            document.getElementById('subtotal').value=result;\n");
+              out.write("                        }\n");
+              out.write("                    }\n");
+              out.write("                                    </script>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>\n");
+              out.write("                        <input type=\"reset\" value=\"Batal\">\n");
+              out.write("                        <input type=\"submit\" value=\"Simpan\" name=\"aksi\">\n");
+              out.write("                    </td>\n");
+              out.write("                </tr>\n");
+              out.write("            </table>\n");
+              out.write("        </form>\n");
+              out.write("                        <br>\n");
+              out.write("       \n");
+              out.write("        \n");
+              out.write("        <form method=\"POST\" action=\"ServletPembelians\">\n");
+              out.write("        <table border=\"1\">\n");
+              out.write("            <tr align=\"center\">\n");
+              out.write("                <th>NO PEMBELIAN</th>\n");
+              out.write("                <th>KODE MENU</th>\n");
+              out.write("                <th>QUANTITY</th>\n");
+              out.write("                <th>SUBTOTAL</th>\n");
+              out.write("            </tr>\n");
+              out.write("            ");
+
+                String nobeli = null;
+                String kodemenu = null;
+                String qty = null;
+                String subtotal = null;
+                
+                rs = kon.stmt.executeQuery("SELECT * FROM sementara ORDER BY no_beli asc");
+                while (rs.next()) {
+                    nobeli = rs.getString("no_beli");
+                    kodemenu = rs.getString(2);
+                    qty = rs.getString(3);
+                    subtotal = rs.getString(4);
+
+            
+              out.write("\n");
+              out.write("\n");
+              out.write("            <tr>\n");
+              out.write("                <td>");
+ out.println(nobeli);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(kodemenu);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(qty);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(subtotal);
+              out.write("</td>\n");
+              out.write("            </tr>\n");
+              out.write("            ");
+ } 
+              out.write("\n");
+              out.write("\n");
+              out.write("        \n");
+              out.write("            ");
+              out.write("\n");
+              out.write("            ");
+
+                rs = kon.stmt.executeQuery("SELECT * from sementara");
+                while (rs.next()) {
+                    
+                    subqty = subqty + (Integer.parseInt(rs.getString(3)));
+                    sub = sub + (Integer.parseInt(rs.getString(4)));
+                    }
+            
+              out.write("\n");
+              out.write("            <tr>\n");
+              out.write("                <td colspan=\"2\"><b align=\"center\">TOTAL</b></td>\n");
+              out.write("                <td><b>");
+ out.println(subqty);
+              out.write("</b></td>\n");
+              out.write("                <td><b>");
+ out.println(sub);
+              out.write("</b></td>\n");
+              out.write("            </tr>\n");
+              out.write("            </table>\n");
+              out.write("           ");
+ kon.close();
+              out.write("\n");
+              out.write("           <input type=\"submit\" value=\"Proses\" name=\"aksi\">\n");
+              out.write("        </form>\n");
+              out.write("    </body>\n");
+              out.write("</html>");
+              out.write("\n");
+              out.write("            ");
+              int evalDoAfterBody = _jspx_th_c_when_2.doAfterBody();
+              if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                break;
+            } while (true);
+          }
+          if (_jspx_th_c_when_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_2);
+            return;
+          }
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_2);
+          out.write("\n");
+          out.write("            ");
+          //  c:when
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_3 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_3.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_3.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='penjualan'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_3 = _jspx_th_c_when_3.doStartTag();
+          if (_jspx_eval_c_when_3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+            do {
+              out.write("\n");
+              out.write("                ");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("\n");
+
+    penjualan pemesanan=new penjualan();
+    menu menu=new menu();
+    supplier supplier=new supplier();
+    koneksi kon= new koneksi();
+    ResultSet rs=null;
+    
+
+              out.write("\n");
+              out.write("\n");
+              out.write("<script type=\"text/javascript\">\n");
+              out.write("    function showEmp(emp_value)\n");
+              out.write("    {\n");
+              out.write("        if (document.getElementById(\"emp_id\").value != \"-1\")\n");
+              out.write("        {\n");
+              out.write("            xmlHttp = GetXmlHttpObject()\n");
+              out.write("            if (xmlHttp == null)\n");
+              out.write("            {\n");
+              out.write("                alert(\"Browser does not support HTTP Request\")\n");
+              out.write("                return\n");
+              out.write("            }\n");
+              out.write("            var url = \"getmenu.jsp\"\n");
+              out.write("            url = url + \"?emp_id=\" + emp_value\n");
+              out.write("\n");
+              out.write("            xmlHttp.onreadystatechange = stateChanged\n");
+              out.write("            xmlHttp.open(\"GET\", url, true)\n");
+              out.write("            xmlHttp.send(null)\n");
+              out.write("        } else\n");
+              out.write("        {\n");
+              out.write("            alert(\"Pilih Kode Menu\");\n");
+              out.write("        }\n");
+              out.write("    }\n");
+              out.write("\n");
+              out.write("    function stateChanged()\n");
+              out.write("    {\n");
+              out.write("        document.getElementById(\"ename\").value = \"\";\n");
+              out.write("        document.getElementById(\"emp_id\").value = \"\";\n");
+              out.write("        if (xmlHttp.readyState == 4 || xmlHttp.readyState == \"complete\")\n");
+              out.write("        {\n");
+              out.write("\n");
+              out.write("            var showdata = xmlHttp.responseText;\n");
+              out.write("            var strar = showdata.split(\":\");\n");
+              out.write("\n");
+              out.write("            if (strar.length == 1)\n");
+              out.write("            {\n");
+              out.write("                document.getElementById(\"emp_id\").focus();\n");
+              out.write("                alert(\"Pilih Kode Menu\");\n");
+              out.write("                document.getElementById(\"ename\").value = \" \";\n");
+              out.write("                document.getElementById(\"emp_id\").value = \" \";\n");
+              out.write("            } else if (strar.length > 1)\n");
+              out.write("            {\n");
+              out.write("                document.getElementById(\"ename\").value = strar[1];\n");
+              out.write("            }\n");
+              out.write("\n");
+              out.write("        }\n");
+              out.write("    }\n");
+              out.write("\n");
+              out.write("    function GetXmlHttpObject()\n");
+              out.write("    {\n");
+              out.write("        var xmlHttp = null;\n");
+              out.write("        try\n");
+              out.write("        {\n");
+              out.write("            xmlHttp = new XMLHttpRequest();\n");
+              out.write("        } catch (e)\n");
+              out.write("        {\n");
+              out.write("            try\n");
+              out.write("            {\n");
+              out.write("                xmlHttp = new ActiveXObject(\"Msxml2.XMLHTTP\");\n");
+              out.write("            } catch (e)\n");
+              out.write("            {\n");
+              out.write("                xmlHttp = new ActiveXObject(\"Microsoft.XMLHTTP\");\n");
+              out.write("            }\n");
+              out.write("        }\n");
+              out.write("        return xmlHttp;\n");
+              out.write("    }\n");
+              out.write("</script>\n");
+              out.write("\n");
+              out.write("\n");
+              out.write("<!DOCTYPE html>\n");
+              out.write("<html>\n");
+              out.write("    <head>\n");
+              out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+              out.write("        <title>Penjualan Mamma Masak</title>\n");
+              out.write("    </head>\n");
+              out.write("    <body>\n");
+              out.write("        <form method=\"POST\" action=\"PenjualanServlet\">\n");
+              out.write("            <h1>Penjualan Menu</h1>\n");
+              out.write("            <table>\n");
+              out.write("                <tr><div>\n");
+              out.write("                    <td><label for=\"inputEmail3\">No Penjualan</label></td>\n");
+              out.write("                    <div class=\"col-sm-10\">\n");
+              out.write("                        <td>\n");
+              out.write("                            ");
+
+                                try {
+                                    
+                                    rs = kon.stmt.executeQuery("select max(right(no_jual,4)) as no from penjualan");
+                                    while (rs.next()) {
+                                        if (rs.first() == false) {
+                                            out.println("<input type='text' class='form-control' readonly value='JOOO1' name='no_jual' >");
+                                        } else {
+                                            rs.last();
+                                            int autonokm = rs.getInt(1) + 1;
+                                            String nomorkm = String.valueOf(autonokm);
+                                            int noLong = nomorkm.length();
+                                            for (int a = 1; a < 5 - noLong; a++) {
+                                                nomorkm = "0" + nomorkm;
+                                            }
+                                            String nomerkm = "J" + nomorkm;
+                                            out.println("<input type='text' class='form_control' readyonly value='" + nomerkm + "' name='no_jual'>");
+                                        }
+                                    }
+                                } catch (Exception e) {
+                                    out.println(e);
+                                }
+                            
+              out.write("\n");
+              out.write("                        </td>\n");
+              out.write("                    </div>\n");
+              out.write("                </div>\n");
+              out.write("                </tr>\n");
+              out.write("                ");
+
+                    java.util.Date waktu = new java.util.Date();
+                    int tanggal = waktu.getDate();
+                    int tahun = waktu.getYear() + 1900;
+                    int bulan = waktu.getMonth() + 1;
+                    String tgl = tanggal + "-" + bulan + "-" + tahun;
+
+                
+              out.write("\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Tanggal Panjualan</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"tgl_jual\" value=\"");
+              out.print(tgl);
+              out.write("\"</td>\n");
+              out.write("                </tr>\n");
+              out.write("               \n");
+              out.write("                <tr>\n");
+              out.write("                        <td>Pilih Kode Menu</td>\n");
+              out.write("                    <td><select name=\"semp_id\" onchange=\"showEmp(this.value);\">\n");
+              out.write("                            <option value=\"-1\">Select</option> \n");
+              out.write("                    ");
+
+                        rs = kon.stmt.executeQuery("SELECT * from menu");
+                        while (rs.next()) {
+                            menu.setKodemenu(rs.getString("kdmenu"));
+                            menu.setNamamenu(rs.getString("nmmenu"));
+                    
+              out.write("\n");
+              out.write("                            <option value=\"");
+              out.print(menu.getKodemenu());
+              out.write('"');
+              out.write('>');
+              out.print(menu.getKodemenu());
+              out.write(" || ");
+              out.print(menu.getNamamenu());
+              out.write("</option>\n");
+              out.write("                    ");
+  } 
+              out.write("\n");
+              out.write("                        </select></td>\n");
+              out.write("                        <input  type=\"hidden\" name=\"emp_id\" id=\"emp_id\" value=\"\">\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                \n");
+              out.write("                    <td>Harga</td>\n");
+              out.write("                    <td><input type=\"text\" readonly name=\"emp_name\" id=\"ename\" value=\"\" onkeyup=\"sum();\"</td>\n");
+              out.write("                    \n");
+              out.write("                </tr>\n");
+              out.write("                \n");
+              out.write("                <tr>\n");
+              out.write("                    <td>QTY</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"qty_jual\" id=\"jml\" onkeyup=\"sum();\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>Subtotal</td>\n");
+              out.write("                    <td><input type=\"text\" name=\"sub_jual\" id=\"subtotal\" readonly=\"readonly\"></td>\n");
+              out.write("                </tr>\n");
+              out.write("                \n");
+              out.write("                <script type=\"text/javascript\">\n");
+              out.write("                    function sum(){\n");
+              out.write("                        var txtFirstNumberValue = document.getElementById('ename').value;\n");
+              out.write("                        var txtSecondNumberValue = document.getElementById('jml').value;\n");
+              out.write("                        var result = parseFloat(txtFirstNumberValue) * parseFloat(txtSecondNumberValue);\n");
+              out.write("                        if(!isNaN(result)){\n");
+              out.write("                            document.getElementById('subtotal').value=result;\n");
+              out.write("                        }\n");
+              out.write("                    }\n");
+              out.write("                                    </script>\n");
+              out.write("                <tr>\n");
+              out.write("                    <td>\n");
+              out.write("                        <input type=\"reset\" value=\"Batal\">\n");
+              out.write("                        <input type=\"submit\" value=\"Simpan\" name=\"aksi\">\n");
+              out.write("                    </td>\n");
+              out.write("                </tr>\n");
+              out.write("            </table>\n");
+              out.write("        </form>\n");
+              out.write("                        <br>\n");
+              out.write("       <br>\n");
+              out.write("\n");
+              out.write("        <table border=\"1\">\n");
+              out.write("            <tr align=\"center\">\n");
+              out.write("                <th>NO PENJUALAN</th>\n");
+              out.write("                <th>KODE MENU</th>\n");
+              out.write("                <th>QUANTITY</th>\n");
+              out.write("                <th>SUBTOTAL</th>\n");
+              out.write("            </tr>\n");
+              out.write("            ");
+
+                String nojual = null;
+                String kodemenu = null;
+                String qty = null;
+                String subtotal = null;
+                
+                rs = kon.stmt.executeQuery("SELECT * FROM sementara_jual ORDER BY no_jual asc");
+                while (rs.next()) {
+                    nojual = rs.getString("no_jual");
+                    kodemenu = rs.getString(2);
+                    qty = rs.getString(3);
+                    subtotal = rs.getString(4);
+
+            
+              out.write("\n");
+              out.write("\n");
+              out.write("            <tr>\n");
+              out.write("                <td>");
+ out.println(nojual);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(kodemenu);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(qty);
+              out.write("</td>\n");
+              out.write("                <td>");
+ out.println(subtotal);
+              out.write("</td>\n");
+              out.write("            </tr>\n");
+              out.write("            ");
+ } 
+              out.write("\n");
+              out.write("            ");
+
+                int subs = 0, sub = 0;
+            
+              out.write("\n");
+              out.write("            ");
+
+                rs = kon.stmt.executeQuery("SELECT * from sementara_jual");
+                while (rs.next()) {
+                    
+                    subs = subs + (Integer.parseInt(rs.getString(3)));
+                    sub = sub + (Integer.parseInt(rs.getString(4)));
+                    }
+            
+              out.write("\n");
+              out.write("            <tr>\n");
+              out.write("                <td colspan=\"2\"><b align=\"center\">TOTAL</b></td>\n");
+              out.write("                <td><b>");
+ out.println(subs);
+              out.write("</b></td>\n");
+              out.write("                <td><b>");
+ out.println(sub);
+              out.write("</b></td>\n");
+              out.write("            </tr>\n");
+              out.write("            </table>\n");
+              out.write("           ");
+ kon.close();
+              out.write("\n");
+              out.write("    </body>\n");
+              out.write("</html>\n");
+              out.write("\n");
+              out.write("            ");
+              int evalDoAfterBody = _jspx_th_c_when_3.doAfterBody();
+              if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                break;
+            } while (true);
+          }
+          if (_jspx_th_c_when_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_3);
+            return;
+          }
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_3);
+          out.write("\n");
+          out.write("            ");
+          //  c:when
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_4 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_4.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_4.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='editbahan'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_4 = _jspx_th_c_when_4.doStartTag();
+          if (_jspx_eval_c_when_4 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
             do {
               out.write("\n");
               out.write("                ");
@@ -435,25 +1093,25 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
               out.write("</html>\n");
               out.write("\n");
               out.write("            ");
-              int evalDoAfterBody = _jspx_th_c_when_2.doAfterBody();
+              int evalDoAfterBody = _jspx_th_c_when_4.doAfterBody();
               if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
                 break;
             } while (true);
           }
-          if (_jspx_th_c_when_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_2);
+          if (_jspx_th_c_when_4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_4);
             return;
           }
-          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_2);
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_4);
           out.write("\n");
           out.write("            ");
           //  c:when
-          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_3 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
-          _jspx_th_c_when_3.setPageContext(_jspx_page_context);
-          _jspx_th_c_when_3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
-          _jspx_th_c_when_3.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='tampilbhn'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
-          int _jspx_eval_c_when_3 = _jspx_th_c_when_3.doStartTag();
-          if (_jspx_eval_c_when_3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_5 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_5.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_5.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='tampilbhn'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_5 = _jspx_th_c_when_5.doStartTag();
+          if (_jspx_eval_c_when_5 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
             do {
               out.write("\n");
               out.write("                ");
@@ -607,25 +1265,25 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
               out.write("</html>");
               out.write("\n");
               out.write("            ");
-              int evalDoAfterBody = _jspx_th_c_when_3.doAfterBody();
+              int evalDoAfterBody = _jspx_th_c_when_5.doAfterBody();
               if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
                 break;
             } while (true);
           }
-          if (_jspx_th_c_when_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_3);
+          if (_jspx_th_c_when_5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_5);
             return;
           }
-          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_3);
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_5);
           out.write("\n");
           out.write("            ");
           //  c:when
-          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_4 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
-          _jspx_th_c_when_4.setPageContext(_jspx_page_context);
-          _jspx_th_c_when_4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
-          _jspx_th_c_when_4.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='menu'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
-          int _jspx_eval_c_when_4 = _jspx_th_c_when_4.doStartTag();
-          if (_jspx_eval_c_when_4 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_6 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_6.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_6.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='menu'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_6 = _jspx_th_c_when_6.doStartTag();
+          if (_jspx_eval_c_when_6 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
             do {
               out.write("\n");
               out.write("                ");
@@ -721,7 +1379,7 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
               out.write("                <th>KODE MENU</th>\n");
               out.write("                <th>NAMA MENU</th>\n");
               out.write("                <th>KODE KATEGORI</th>\n");
-              out.write("                <th>HARGA</th>\n");
+              out.write("                <th>HARGA</th>                \n");
               out.write("                <th>STOK</th>\n");
               out.write("                <th>AKSI</th>\n");
               out.write("            </tr>\n");
@@ -780,25 +1438,25 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
               out.write("</html>\n");
               out.write("\n");
               out.write("            ");
-              int evalDoAfterBody = _jspx_th_c_when_4.doAfterBody();
+              int evalDoAfterBody = _jspx_th_c_when_6.doAfterBody();
               if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
                 break;
             } while (true);
           }
-          if (_jspx_th_c_when_4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_4);
+          if (_jspx_th_c_when_6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_6);
             return;
           }
-          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_4);
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_6);
           out.write("\n");
           out.write("            ");
           //  c:when
-          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_5 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
-          _jspx_th_c_when_5.setPageContext(_jspx_page_context);
-          _jspx_th_c_when_5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
-          _jspx_th_c_when_5.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='editmenu'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
-          int _jspx_eval_c_when_5 = _jspx_th_c_when_5.doStartTag();
-          if (_jspx_eval_c_when_5 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_7 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_7.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_7.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='editmenu'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_7 = _jspx_th_c_when_7.doStartTag();
+          if (_jspx_eval_c_when_7 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
             do {
               out.write("\n");
               out.write("                ");
@@ -886,25 +1544,25 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
               out.write("</html>\n");
               out.write("\n");
               out.write("            ");
-              int evalDoAfterBody = _jspx_th_c_when_5.doAfterBody();
+              int evalDoAfterBody = _jspx_th_c_when_7.doAfterBody();
               if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
                 break;
             } while (true);
           }
-          if (_jspx_th_c_when_5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_5);
+          if (_jspx_th_c_when_7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_7);
             return;
           }
-          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_5);
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_7);
           out.write("\n");
           out.write("            ");
           //  c:when
-          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_6 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
-          _jspx_th_c_when_6.setPageContext(_jspx_page_context);
-          _jspx_th_c_when_6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
-          _jspx_th_c_when_6.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='supplier'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
-          int _jspx_eval_c_when_6 = _jspx_th_c_when_6.doStartTag();
-          if (_jspx_eval_c_when_6 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_8 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_8.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_8.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_8.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='supplier'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_8 = _jspx_th_c_when_8.doStartTag();
+          if (_jspx_eval_c_when_8 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
             do {
               out.write("\n");
               out.write("                ");
@@ -1044,25 +1702,25 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
               out.write("</html>\n");
               out.write("\n");
               out.write("            ");
-              int evalDoAfterBody = _jspx_th_c_when_6.doAfterBody();
+              int evalDoAfterBody = _jspx_th_c_when_8.doAfterBody();
               if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
                 break;
             } while (true);
           }
-          if (_jspx_th_c_when_6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_6);
+          if (_jspx_th_c_when_8.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_8);
             return;
           }
-          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_6);
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_8);
           out.write("\n");
           out.write("            ");
           //  c:when
-          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_7 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
-          _jspx_th_c_when_7.setPageContext(_jspx_page_context);
-          _jspx_th_c_when_7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
-          _jspx_th_c_when_7.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='editsupp'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
-          int _jspx_eval_c_when_7 = _jspx_th_c_when_7.doStartTag();
-          if (_jspx_eval_c_when_7 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_9 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_9.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_9.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_9.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='editsupp'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_9 = _jspx_th_c_when_9.doStartTag();
+          if (_jspx_eval_c_when_9 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
             do {
               out.write("\n");
               out.write("                ");
@@ -1141,25 +1799,25 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
               out.write("</html>\n");
               out.write("\n");
               out.write("            ");
-              int evalDoAfterBody = _jspx_th_c_when_7.doAfterBody();
+              int evalDoAfterBody = _jspx_th_c_when_9.doAfterBody();
               if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
                 break;
             } while (true);
           }
-          if (_jspx_th_c_when_7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_7);
+          if (_jspx_th_c_when_9.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_9);
             return;
           }
-          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_7);
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_9);
           out.write("\n");
           out.write("            ");
           //  c:when
-          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_8 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
-          _jspx_th_c_when_8.setPageContext(_jspx_page_context);
-          _jspx_th_c_when_8.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
-          _jspx_th_c_when_8.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='user'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
-          int _jspx_eval_c_when_8 = _jspx_th_c_when_8.doStartTag();
-          if (_jspx_eval_c_when_8 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_10 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_10.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_10.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_10.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='user'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_10 = _jspx_th_c_when_10.doStartTag();
+          if (_jspx_eval_c_when_10 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
             do {
               out.write("\n");
               out.write("                ");
@@ -1289,25 +1947,25 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
               out.write("</html>\n");
               out.write("\n");
               out.write("            ");
-              int evalDoAfterBody = _jspx_th_c_when_8.doAfterBody();
+              int evalDoAfterBody = _jspx_th_c_when_10.doAfterBody();
               if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
                 break;
             } while (true);
           }
-          if (_jspx_th_c_when_8.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_8);
+          if (_jspx_th_c_when_10.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_10);
             return;
           }
-          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_8);
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_10);
           out.write("\n");
           out.write("            ");
           //  c:when
-          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_9 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
-          _jspx_th_c_when_9.setPageContext(_jspx_page_context);
-          _jspx_th_c_when_9.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
-          _jspx_th_c_when_9.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='edituser'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
-          int _jspx_eval_c_when_9 = _jspx_th_c_when_9.doStartTag();
-          if (_jspx_eval_c_when_9 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+          org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_11 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+          _jspx_th_c_when_11.setPageContext(_jspx_page_context);
+          _jspx_th_c_when_11.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+          _jspx_th_c_when_11.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='edituser'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+          int _jspx_eval_c_when_11 = _jspx_th_c_when_11.doStartTag();
+          if (_jspx_eval_c_when_11 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
             do {
               out.write("\n");
               out.write("                ");
@@ -1378,16 +2036,24 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
               out.write("</html>\n");
               out.write("\n");
               out.write("            ");
-              int evalDoAfterBody = _jspx_th_c_when_9.doAfterBody();
+              int evalDoAfterBody = _jspx_th_c_when_11.doAfterBody();
               if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
                 break;
             } while (true);
           }
-          if (_jspx_th_c_when_9.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_9);
+          if (_jspx_th_c_when_11.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+            _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_11);
             return;
           }
-          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_9);
+          _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_11);
+          out.write("\n");
+          out.write("            ");
+          if (_jspx_meth_c_when_12((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
+            return;
+          out.write("\n");
+          out.write("            ");
+          if (_jspx_meth_c_when_13((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
+            return;
           out.write("\n");
           out.write("            ");
           if (_jspx_meth_c_otherwise_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
@@ -1453,17 +2119,18 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("        <title>Restauran Mamma Masak</title>\n");
         out.write("    </head>\n");
         out.write("    <body>\n");
-        out.write("        <h1>Welcome to the simplestyle_blue_trees template</h1>\n");
-        out.write("        <p>This standards compliant, simple, fixed width website template is released as an 'open source' design (under a <a href=\"http://creativecommons.org/licenses/by/3.0\">Creative Commons Attribution 3.0 Licence</a>), which means that you are free to download and use it for anything you want (including modifying and amending it). All I ask is that you leave the 'design from HTML5webtemplates.co.uk' link in the footer of the template, but other than that...</p>\n");
-        out.write("        <p>This template is written entirely in <strong>HTML5</strong> and <strong>CSS</strong>, and can be validated using the links in the footer.</p>\n");
-        out.write("        <p>You can view more free HTML5 web templates <a href=\"http://www.html5webtemplates.co.uk\">here</a>.</p>\n");
-        out.write("        <p>This template is a fully functional 5 page website, with an <a href=\"examples.html\">examples</a> page that gives examples of all the styles available with this design.</p>\n");
-        out.write("        <h2>Browser Compatibility</h2>\n");
-        out.write("        <p>This template has been tested in the following browsers:</p>\n");
+        out.write("        <h1>SELAMAT DATANG DI RESTAURAN MAMMA MASAK</h1>\n");
+        out.write("        <p> Disini anda bisa makan dan minum karena ini adalah restoran</p>\n");
+        out.write("        <p> disinipun kami menyediakan makanan ringan dan makanan berat, kami pula menyediakan minuman hangat dan segar</p>\n");
+        out.write("        <p> Tetapi kami tidak menyediakan jodoh untuk anda</p>\n");
+        out.write("        <h2>PILIHAN MAMA MASAK</h2>\n");
+        out.write("        <p> Silahkan dibaca </p>\n");
         out.write("        <ul>\n");
-        out.write("          <li>Internet Explorer 9</li>\n");
-        out.write("          <li>FireFox 25</li>\n");
-        out.write("          <li>Google Chrome 31</li>\n");
+        out.write("          <li>Home Adalah tampilan utama</li>\n");
+        out.write("          <li> Menu Adalah tampilan menu makanan atau minuman yang akan dipilih</li>\n");
+        out.write("          <li> Bahan Adalah bahan baku makanan dan minuman yang akan dimasak</li>\n");
+        out.write("          <li> Supplier Adalah tampilan personal perusahaan untuk pembelian bahan baku</li>\n");
+        out.write("          <li> User Adalah kontak admin yang akan menginput </li>\n");
         out.write("        </ul>\n");
         out.write("    </body>\n");
         out.write("</html>\n");
@@ -1479,6 +2146,98 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
       return true;
     }
     _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_when_12(javax.servlet.jsp.tagext.JspTag _jspx_th_c_choose_0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:when
+    org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_12 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+    _jspx_th_c_when_12.setPageContext(_jspx_page_context);
+    _jspx_th_c_when_12.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+    _jspx_th_c_when_12.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='lapbahan'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_when_12 = _jspx_th_c_when_12.doStartTag();
+    if (_jspx_eval_c_when_12 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                ");
+        out.write("\r\n");
+        out.write("\r\n");
+        out.write("\r\n");
+        out.write("<!DOCTYPE html>\r\n");
+        out.write("<html>\r\n");
+        out.write("    <head>\r\n");
+        out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+        out.write("        <title>JSP Page</title>\r\n");
+        out.write("    </head>\r\n");
+        out.write("    <body>\r\n");
+        out.write("        <h3>Cetak Laporan Barang Berdasarkan Stok Tersedia</h3>\r\n");
+        out.write("        <form action=\"TampilLaporanBahan.jsp\" method=\"get\">\r\n");
+        out.write("            Stok <= <input type=\"number\" name=\"jumlah\" value=\"0\">\r\n");
+        out.write("            <input type=\"submit\" name=\"submit\" value=\"Cetak Laporan\"/>\r\n");
+        out.write("        </form>\r\n");
+        out.write("    </body>\r\n");
+        out.write("</html>\r\n");
+        out.write("\n");
+        out.write("            ");
+        int evalDoAfterBody = _jspx_th_c_when_12.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_when_12.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_12);
+      return true;
+    }
+    _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_12);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_when_13(javax.servlet.jsp.tagext.JspTag _jspx_th_c_choose_0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:when
+    org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_13 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+    _jspx_th_c_when_13.setPageContext(_jspx_page_context);
+    _jspx_th_c_when_13.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+    _jspx_th_c_when_13.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.halaman=='lapmenu'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_when_13 = _jspx_th_c_when_13.doStartTag();
+    if (_jspx_eval_c_when_13 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                ");
+        out.write("\n");
+        out.write("\n");
+        out.write("\n");
+        out.write("<!DOCTYPE html>\n");
+        out.write("<html>\n");
+        out.write("    <head>\n");
+        out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+        out.write("        <title>Cetak Laporan Menu</title>\n");
+        out.write("    </head>\n");
+        out.write("    <body>\n");
+        out.write("        <h3>Cetak Laporan Menu Berdasarkan Jumlah Tersedia</h3>\n");
+        out.write("        <form action=\"TampilLapMenu.jsp\" method=\"get\">\n");
+        out.write("            Jumlah <= <input type=\"number\" name=\"jumlah\" value=\"0\">\n");
+        out.write("            <input type=\"submit\" name=\"submit\" value=\"Cetak Laporan\"/>\n");
+        out.write("        </form>\n");
+        out.write("    </body>\n");
+        out.write("</html>\n");
+        out.write("\n");
+        out.write("            ");
+        int evalDoAfterBody = _jspx_th_c_when_13.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_when_13.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_13);
+      return true;
+    }
+    _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_13);
     return false;
   }
 
@@ -1505,17 +2264,18 @@ public final class beranda_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("        <title>Restauran Mamma Masak</title>\n");
         out.write("    </head>\n");
         out.write("    <body>\n");
-        out.write("        <h1>Welcome to the simplestyle_blue_trees template</h1>\n");
-        out.write("        <p>This standards compliant, simple, fixed width website template is released as an 'open source' design (under a <a href=\"http://creativecommons.org/licenses/by/3.0\">Creative Commons Attribution 3.0 Licence</a>), which means that you are free to download and use it for anything you want (including modifying and amending it). All I ask is that you leave the 'design from HTML5webtemplates.co.uk' link in the footer of the template, but other than that...</p>\n");
-        out.write("        <p>This template is written entirely in <strong>HTML5</strong> and <strong>CSS</strong>, and can be validated using the links in the footer.</p>\n");
-        out.write("        <p>You can view more free HTML5 web templates <a href=\"http://www.html5webtemplates.co.uk\">here</a>.</p>\n");
-        out.write("        <p>This template is a fully functional 5 page website, with an <a href=\"examples.html\">examples</a> page that gives examples of all the styles available with this design.</p>\n");
-        out.write("        <h2>Browser Compatibility</h2>\n");
-        out.write("        <p>This template has been tested in the following browsers:</p>\n");
+        out.write("        <h1>SELAMAT DATANG DI RESTAURAN MAMMA MASAK</h1>\n");
+        out.write("        <p> Disini anda bisa makan dan minum karena ini adalah restoran</p>\n");
+        out.write("        <p> disinipun kami menyediakan makanan ringan dan makanan berat, kami pula menyediakan minuman hangat dan segar</p>\n");
+        out.write("        <p> Tetapi kami tidak menyediakan jodoh untuk anda</p>\n");
+        out.write("        <h2>PILIHAN MAMA MASAK</h2>\n");
+        out.write("        <p> Silahkan dibaca </p>\n");
         out.write("        <ul>\n");
-        out.write("          <li>Internet Explorer 9</li>\n");
-        out.write("          <li>FireFox 25</li>\n");
-        out.write("          <li>Google Chrome 31</li>\n");
+        out.write("          <li>Home Adalah tampilan utama</li>\n");
+        out.write("          <li> Menu Adalah tampilan menu makanan atau minuman yang akan dipilih</li>\n");
+        out.write("          <li> Bahan Adalah bahan baku makanan dan minuman yang akan dimasak</li>\n");
+        out.write("          <li> Supplier Adalah tampilan personal perusahaan untuk pembelian bahan baku</li>\n");
+        out.write("          <li> User Adalah kontak admin yang akan menginput </li>\n");
         out.write("        </ul>\n");
         out.write("    </body>\n");
         out.write("</html>\n");

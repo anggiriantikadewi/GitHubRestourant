@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="17eafa55-dcfd-4820-849f-e9cd17719846">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="pstok" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     menu.`kdmenu` AS menu_kdmenu,
+     menu.`nmmenu` AS menu_nmmenu,
+     menu.`kodekategori` AS menu_kodekategori,
+     menu.`harga` AS menu_harga,
+     menu.`stok` AS menu_stok
+FROM
+     `menu` menu
+
+WHERE stok <= $P{pstok}]]>
+	</queryString>
+	<field name="menu_kdmenu" class="java.lang.String"/>
+	<field name="menu_nmmenu" class="java.lang.String"/>
+	<field name="menu_kodekategori" class="java.lang.String"/>
+	<field name="menu_harga" class="java.lang.String"/>
+	<field name="menu_stok" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="143" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="2752" height="77" uuid="24c7ab9a-33c1-4e12-8e78-984b758e64e3"/>
+				<imageExpression><![CDATA["D:\\UBSI ARD\\UBSI SEMESTER 4\\PEMPROGRAMAN AK II\\restaurant\\web\\images\\IMG_20200627_214041.JPG"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="31" y="91" width="403" height="33" uuid="31dffe18-cd39-470a-96e8-75668d173372"/>
+				<textElement textAlignment="Center">
+					<font fontName="Lucida Sans Typewriter" size="25"/>
+				</textElement>
+				<text><![CDATA[LAPORAN MENU]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="28" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="10" y="8" width="100" height="20" uuid="28701241-14a6-4973-94d6-3a8a6ca5bb36"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="111" height="20" uuid="c872f363-4aca-40ae-9b35-2b1826a1a353"/>
+				<text><![CDATA[KODE MENU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="0" width="111" height="20" uuid="7c518813-69f3-47c1-93f3-56f2361041e2"/>
+				<text><![CDATA[NAMA MENU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="0" width="111" height="20" uuid="e6b2cb2f-c50d-463c-9c75-267ebbed16f5"/>
+				<text><![CDATA[KATEGORI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="111" height="20" uuid="b4539afa-a653-4f57-8ef9-09bcd4db0b6c"/>
+				<text><![CDATA[HARGA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="0" width="111" height="20" uuid="8cd49531-01db-459d-88ec-30ff5767f5e8"/>
+				<text><![CDATA[STOK]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="111" height="20" uuid="8edc9d77-dd34-4c9b-861f-54b3ee244f0a"/>
+				<textFieldExpression><![CDATA[$F{menu_kdmenu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="111" height="20" uuid="7108e470-8fb7-436d-a310-8e15de19e430"/>
+				<textFieldExpression><![CDATA[$F{menu_nmmenu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="111" height="20" uuid="116b72d9-cb4b-4bb9-a938-ab28d091ed13"/>
+				<textFieldExpression><![CDATA[$F{menu_kodekategori}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="111" height="20" uuid="28bbc16f-becd-4d0b-b791-275f2d3eb99d"/>
+				<textFieldExpression><![CDATA[$F{menu_harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="111" height="20" uuid="1e5d7a11-1372-4645-87e3-648a521ef7ef"/>
+				<textFieldExpression><![CDATA[$F{menu_stok}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

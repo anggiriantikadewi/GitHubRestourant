@@ -32,6 +32,26 @@
         <servlet-name>SuppServlet</servlet-name>
         <servlet-class>control.SuppServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PembelianServlet</servlet-name>
+        <servlet-class>control.PembelianServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>tes</servlet-name>
+        <servlet-class>control.tes</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PenjualanServlet</servlet-name>
+        <servlet-class>control.PenjualanServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletPembelian</servlet-name>
+        <servlet-class>control.ServletPembelian</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletPembelians</servlet-name>
+        <servlet-class>control.ServletPembelians</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>bahanServlet</servlet-name>
         <url-pattern>/bahanServlet</url-pattern>
@@ -43,10 +63,6 @@
     <servlet-mapping>
         <servlet-name>userServlet</servlet-name>
         <url-pattern>/userServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>supplierServlet</servlet-name>
-        <url-pattern>/supplierServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>BahanServlet</servlet-name>
@@ -63,6 +79,26 @@
     <servlet-mapping>
         <servlet-name>SuppServlet</servlet-name>
         <url-pattern>/SuppServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PembelianServlet</servlet-name>
+        <url-pattern>/PembelianServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>tes</servlet-name>
+        <url-pattern>/tes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PenjualanServlet</servlet-name>
+        <url-pattern>/PenjualanServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletPembelian</servlet-name>
+        <url-pattern>/ServletPembelian</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletPembelians</servlet-name>
+        <url-pattern>/ServletPembelians</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

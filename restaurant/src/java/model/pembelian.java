@@ -13,11 +13,12 @@ public class pembelian {
     private String nobeli;
     private String tanggalbeli;
     private String totalbeli;
-    private Double kodesupp;
-    private Double kodemenu;
-    private Double nmmenu;
-    private Double qty;
-    private Double subtotal;
+    private String kodesupp;
+    private String kodemenu;
+    private String harga;
+    private String nmmenu;
+    private String qty;
+    private String subtotal;
 
     public String getNobeli() {
         return nobeli;
@@ -43,46 +44,54 @@ public class pembelian {
         this.totalbeli = totalbeli;
     }
 
-    public Double getKodesupp() {
+    public String getKodesupp() {
         return kodesupp;
     }
 
-    public void setKodesupp(Double kodesupp) {
+    public void setKodesupp(String kodesupp) {
         this.kodesupp = kodesupp;
     }
 
-    public Double getKodemenu() {
+    public String getKodemenu() {
         return kodemenu;
     }
 
-    public void setKodemenu(Double kodemenu) {
+    public void setKodemenu(String kodemenu) {
         this.kodemenu = kodemenu;
     }
 
-    public Double getNmmenu() {
+    public String getNmmenu() {
         return nmmenu;
     }
 
-    public void setNmmenu(Double nmmenu) {
+    public void setNmmenu(String nmmenu) {
         this.nmmenu = nmmenu;
     }
 
-    public Double getQty() {
+    public String getHarga() {
+        return harga;
+    }
+
+    public void setHarga(String harga) {
+        this.harga = harga;
+    }
+
+    public String getQty() {
         return qty;
     }
 
-    public void setQty(Double qty) {
+    public void setQty(String qty) {
         this.qty = qty;
     }
 
-    public Double getSubtotal() {
+    public String getSubtotal() {
         return subtotal;
     }
 
-    public void setSubtotal(Double subtotal) {
+    public void setSubtotal(String subtotal) {
         this.subtotal = subtotal;
     }
     
-    
+        
     
 }

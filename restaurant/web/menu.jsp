@@ -90,7 +90,7 @@
                 <th>KODE MENU</th>
                 <th>NAMA MENU</th>
                 <th>KODE KATEGORI</th>
-                <th>HARGA</th>
+                <th>HARGA</th>                
                 <th>STOK</th>
                 <th>AKSI</th>
             </tr>

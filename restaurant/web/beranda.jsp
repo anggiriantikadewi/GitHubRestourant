@@ -21,7 +21,7 @@
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
           <h1><a href="beranda.jsp">Restauran<span class="logo_colour">Mamma Masak</span></a></h1>
-          <h2>Food. Drinks. Snack.</h2>
+          <h2>Makanan Minuman Enakkkkk!</h2>
         </div>
       </div>
       <div id="menubar">
@@ -31,8 +31,9 @@
           <li><a href="beranda.jsp?halaman=menu">Menu</a></li>
           <li><a href="beranda.jsp?halaman=bahan">Bahan</a></li>
           <li><a href="beranda.jsp?halaman=supplier">Supplier</a></li>
-          <li><a href="beranda.jsp?halaman=user">User</a></li>
           <li><a href="beranda.jsp?halaman=pembelian">Pembelian</a></li>
+          <li><a href="beranda.jsp?halaman=penjualan">Penjualan</a></li>
+          <li><a href="beranda.jsp?halaman=user">User</a></li>
         </ul>
       </div>
     </div>
@@ -45,21 +46,24 @@
           <div class="sidebar_item">
             <!-- insert your sidebar items here -->
             <h3>Latest News</h3>
-            <h4>New Website Launched</h4>
-            <h5>February 1st, 2014</h5>
-            <p>2014 sees the redesign of our website. Take a look around and let us know what you think.<br /><a href="#">Read more</a></p>
+            <h4>RESTAURANT MAMMA MASAK</h4>
+            <h5>February 1st, 2010</h5>
+            <p>Mamma Masak adalah perusahaan yang bergerak dibidang penjualan makanan dan minuman. Berdiri sejak tahun 2010 dan didirikan oleh Ibu Marwah Rianti dengan memiliki 6 karyawan dengan bagian masing masing. .<br /><a href="#">Read more</a></p>
           </div>
           <div class="sidebar_base"></div>
         </div>
         <div class="sidebar">
           <div class="sidebar_top"></div>
           <div class="sidebar_item">
-            <h3>Useful Links</h3>
+            <h3>Laporan</h3>
             <ul>
-              <li><a href="#">link 1</a></li>
-              <li><a href="#">link 2</a></li>
-              <li><a href="#">link 3</a></li>
-              <li><a href="#">link 4</a></li>
+              <li><a href="beranda.jsp?halaman=lapbahan">Laporan Bahan</a></li>
+              <li><a href="beranda.jsp?halaman=lapmenu">Laporan Menu</a></li>
+              <li><a href="beranda.jsp?halaman=lapsupplier">Laporan Supplier</a></li>
+              <li><a href="beranda.jsp?halaman=lappembelian">Laporan Pembelian</a></li>
+              <li><a href="beranda.jsp?halaman=lappenjualan">Laporan Penjualan</a></li>
+              <li><a href="beranda.jsp?halaman=lapuser">Laporan User</a></li>
+             
             </ul>
           </div>
           <div class="sidebar_base"></div>
@@ -74,6 +78,12 @@
             </c:when>
             <c:when test="${param.halaman=='bahan'}">
                 <%@include file="bahan.jsp" %>
+            </c:when>
+            <c:when test="${param.halaman=='pembelian'}">
+                <%@include file="pembelian.jsp" %>
+            </c:when>
+            <c:when test="${param.halaman=='penjualan'}">
+                <%@include file="penjualan.jsp" %>
             </c:when>
             <c:when test="${param.halaman=='editbahan'}">
                 <%@include file="editbahan.jsp" %>
@@ -99,6 +109,12 @@
             <c:when test="${param.halaman=='edituser'}">
                 <%@include file="edituser.jsp" %>
             </c:when>
+            <c:when test="${param.halaman=='lapbahan'}">
+                <%@include file="CetakLaporanBahan.jsp" %>
+            </c:when>
+            <c:when test="${param.halaman=='lapmenu'}">
+                <%@include file="CetakLapMenu.jsp" %>
+            </c:when>
             <c:otherwise>
                 <%@include file="home.jsp" %>
             </c:otherwise>
@@ -108,8 +124,9 @@
     </div>
     <div id="content_footer"></div>
     <div id="footer">
-      <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.html">Contact Us</a></p>
-      <p>Copyright &copy; simplestyle_blue_trees | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">design from HTML5webtemplates.co.uk</a></p>
+      <p>Anggi Riantika Dewi, Amalia Syifa, Fenti Yulya Halim, Nada Horiah, Paskah Harianja</p>
+      <p>Restaurant Mamma Masak <br>
+      By. Anggi Riantika Dewi</p>
     </div>
   </div>
 </body>
